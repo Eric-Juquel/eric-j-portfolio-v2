@@ -1,3 +1,5 @@
+import SideMenu from "../navigation/SideMenu";
+
 export default function Layout({
   children,
 }: {
@@ -5,7 +7,9 @@ export default function Layout({
 }) {
   return (
     <>
-      <div className="hidden md:block w-60">Side Navigation</div>
+      <div className="hidden md:block ">
+        <SideMenu />
+      </div>
       <div className="md:hidden block w-60">Burger Menu</div>
 
       <main>{children}</main>

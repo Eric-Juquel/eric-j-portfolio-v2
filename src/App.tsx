@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./modules/core/layout/Layout";
 import { APP_ROUTES } from "./modules/core/routes";
 import HomeView from "./modules/home/HomeView";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default function App() {
   return (

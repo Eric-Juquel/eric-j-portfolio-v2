@@ -1,16 +1,13 @@
 import { NavLink } from "react-router-dom";
 import Tooltip from "../../shared/components/Tooltip";
+import Logo from "../../../assets/logos/Logo1.svg?react";
 
 export default function Heading() {
   return (
     <div className="w-[90%] h-90 flex flex-col items-center justify-between">
       <NavLink to="/">
-        <div className="flex flex-col h-80 p-4 justify-between">
-          <img
-            src="https://res.cloudinary.com/ericjuquel94/image/upload/v1638351699/portfolio/Logo1_adljkk.png"
-            alt="E.J"
-            className="h-40 w-40 "
-          />
+        <div className="flex flex-col h-80 p-4 justify-between rounded-md hover:bg-gray-700/60">
+          <Logo className="h-40 w-40" />
           <div>
             <h2 className="mb-1">Eric</h2>
             <h3>Développeur web</h3>

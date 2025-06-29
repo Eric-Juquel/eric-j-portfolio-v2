@@ -12,7 +12,7 @@
     @apply text-7xl font-bold bg-gradient-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent;
   }
   h2 {
-    @apply text-[2.125rem] -tracking-tighter;
+    @apply text-[2.125rem] text-light -tracking-tighter;
   }
   h3 {
     @apply text-2xl font-light text-medium;
@@ -29,6 +29,12 @@
 
   aside {
     @apply bg-side-menu shadow-side-menu;
+  }
+}
+
+@layer components {
+  .button-regular {
+    @apply cursor-pointer text-sm text-black bg-secondary hover:bg-secondary-hover px-4 py-2 min-w-16 rounded-sm uppercase transition-colors ease-in-out;
   }
 }
 

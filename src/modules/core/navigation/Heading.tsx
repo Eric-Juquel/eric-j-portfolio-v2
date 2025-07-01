@@ -5,8 +5,11 @@ import { useRef, useState } from "react";
 import DownloadModal, {
   type ModalContent,
 } from "../../shared/components/DownloadModal";
+import { useTranslation } from "react-i18next";
 
 export default function Heading() {
+  const { t } = useTranslation();
+
   const dialogRef = useRef<HTMLDialogElement | null>(null);
 
   const [modalContent, setModalContent] = useState<ModalContent>({
@@ -19,7 +22,7 @@ export default function Heading() {
   const openCVModalHandler = () => {
     setModalContent({
       title: "CV",
-      description: "Telecharger le CV AU FORMT PDF (223 Ko)?",
+      description: `${t("cv")}  ${t("pdf")} (223Ko)`,
       documentRef: "/files/CV_2024-10-29_Eric_JUQUEL.pdf",
     });
 
@@ -28,8 +31,7 @@ export default function Heading() {
   const openLRModalHandler = () => {
     setModalContent({
       title: "LR",
-      description:
-        "Telecharger la lettre de recommandation au format PDF (299 Ko )?",
+      description: `${t("lr")}  ${t("pdf")} (299Ko)`,
       documentRef:
         "/files/Lettre de recommandation Woody Technologies pour Eric Juquel.pdf",
     });
@@ -44,12 +46,12 @@ export default function Heading() {
           <Logo className="h-40 w-40" />
           <div>
             <h2 className="mb-1">Eric</h2>
-            <h3>Développeur web</h3>
+            <h3>{t("title")}</h3>
           </div>
         </div>
       </NavLink>
       <div className="flex p-2 items-center justify-around w-full">
-        <Tooltip text="Telecharger le CV">
+        <Tooltip text={t("cv")} place="top">
           <button
             aria-describedby="tooltip-id"
             type="button"
@@ -59,7 +61,7 @@ export default function Heading() {
             CV
           </button>
         </Tooltip>
-        <Tooltip text="Télécharger la recommandation">
+        <Tooltip text={t("lr")} place="top">
           <button
             aria-describedby="tooltip-id"
             type="button"

@@ -5,19 +5,19 @@ export type AppRoute = {
 
 export const APP_ROUTES: Record<string, AppRoute> = {
   home: {
-    label: "Accueil",
+    label: "home",
     href: "/home",
   },
   skills: {
-    label: "Compétences",
+    label: "skills",
     href: "/skills",
   },
   achievements: {
-    label: "Réalisations",
+    label: "achievements",
     href: "/achievements",
   },
   contact: {
-    label: "Contact",
+    label: "contact",
     href: "/contact",
   },
 };

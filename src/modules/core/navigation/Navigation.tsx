@@ -2,8 +2,10 @@ import { NavLink, useLocation } from "react-router-dom";
 import { APP_ROUTES } from "../routes";
 import { scrollToTopHandler } from "../../shared/utils";
 import "./navigation.css";
+import { useTranslation } from "react-i18next";
 
 export default function Navigation() {
+  const { t } = useTranslation();
   const location = useLocation();
 
   return (
@@ -25,7 +27,7 @@ export default function Navigation() {
                   backgroundColor: isActive ? "rgba(0,0,0, 0.3)" : "",
                 }}
               >
-                <span>{item.label}</span>
+                <span className="capitalize">{t(item.label)}</span>
               </NavLink>
             </li>
           );

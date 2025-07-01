@@ -1,0 +1,80 @@
+{
+  "title": "Web developer",
+  "subtitle": "Full Stack Js Developer",
+  "cv": "Download resume",
+  "lr": "Download letter of recommendation",
+  "pdf": "in PDF format",
+  "download": "Download",
+  "exit": "Exit",
+
+  "home": "home",
+  "about": "about",
+  "skills": "skills",
+  "achievements": " my work",
+  "career": "career",
+  "contact": "contact",
+
+  "contactMe": "contact me",
+  "name": "Name",
+  "subject": "Subject",
+  "submit": "submit",
+  "sending": "sending...",
+  "sent": "Message sent with success",
+  "errorSent": "Error! Message not sent",
+  "bot": " You're not fooling us, bot",
+  "close": "Close",
+
+  "skills-1": "My 'Web & mobile web developer' training provided me with the fundamental bases for creating responsive websites",
+  "skills-2": "I choose to focus on JavaScipt by developing my skills in this workflow",
+  "skills-3": "My professional experience in a company allowed me to carry out the Front-End and Back-end parts of web applications in ReactJs/NodeJs and to master the essential tools for teamwork",
+  "skills-4": "I regularly practice a technological watch in order to optimize my current skills and acquire new ones",
+  "languageFramework": "Full-stack",
+  "library": "librarys",
+  "test": "Automated tests",
+
+  "professionals": "professionals",
+  "training": "personnals",
+  "linkTo": "Visit: ",
+  "complete": "Full description on Linkedin",
+
+  "digitalFactory": "Since 2022 I have participated in the digital transformation of RATP by collaborating on several full-stack projects within the Digital Factory.",
+  "bootstrap": "The Digital Factory uses modern development frameworks to create innovative and efficient solutions. These projects are carried out within agile teams, ensuring dynamic collaboration and rapid adaptation to customer needs.",
+
+  "coverage": "For the coverage of the",
+  "elections": " american elections of France 24",
+  "achieve": ", I achieved the front part of the user interface allowing to consult the results, to moderate them and to make them available to the graphical tools.",
+  "interface": "The interface",
+  "include": " also included the edition of information banners as well as the publication of antenna infographics to the social networks of the France Médias Monde group.",
+
+  "video": "Play video",
+  "slider": "Open Slider",
+
+  "licence": "My mission was to completely redesign the administration interface of the company's ",
+  "serveur": "license server ",
+  "licenceSuite": "to ReactJs, providing to view and edit customers license models including a range of products offered and features.",
+
+  "presidentialTitle": "Presidentials",
+  "presidentialSub": "",
+  "senatTitle": "House / Senate",
+  "senatSub": "",
+  "tickerTitle": "Ticker",
+  "tickerSub": "",
+
+  "lineshopDesc": "Full stack demo e-commerce site realized from scratch, combining MongoDB Express React and NodeJs (sandbox preview - forms disabled)",
+  "visit": "Visit web site",
+
+  "smTitle": "Île Sainte Marie",
+  "smSub": "Web site project around Sainte Marie Island in Madagascar, fully responsive",
+
+  "ltdTitle": "LTD Car Service",
+  "ltdSub": "Redesign of the website of a luxury vehicle provider with driver in Paris",
+
+  "lbeTitle": "Le Bon Endroit",
+  "lbeSub": "Hotel website demo made with Wordpress - Elementor - Woocommerce",
+
+  "required": "These fields must be completed",
+  "site": "The site ",
+  "datas": " does not store any personal data, these are attached to an email sent to Mr Eric Juquel, author and owner of the site",
+  "email": "Send an email",
+  "tel": "Call "
+}

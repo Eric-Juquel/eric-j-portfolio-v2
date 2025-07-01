@@ -1,0 +1,80 @@
+{
+  "title": "Développeur web",
+  "subtitle": "Développeur Full Stack Js",
+  "cv": "Télécharger le CV",
+  "lr": "Télécharger la lettre de recommandation",
+  "pdf": "au format PDF",
+  "download": "Télécharger",
+  "exit": "Sortir",
+
+  "home": "accueil",
+  "about": "à propos",
+  "skills": "compétences",
+  "achievements": "réalisations",
+  "career": "parcours",
+  "contact": "contact",
+
+  "contactMe": "contactez moi",
+  "name": "Nom",
+  "subject": "Sujet",
+  "submit": "envoyer",
+  "sending": "envoi...",
+  "sent": "Message envoyé avec succés",
+  "errorSent": "Erreur! Message non envoyé",
+  "bot": "Robot repéré !",
+  "close": "Fermer",
+
+  "skills-1": "Ma Formation 'Développeur web & web mobile' m'a permis d'acquérir les bases fondamentales à la création de sites web responsives",
+  "skills-2": "J'ai choisi de me concentrer sur le JavaScipt en développant mes compétences dans cet environnement",
+  "skills-3": "Mon expérience professionelle en entreprise m'a permis de réaliser les parties Front-End et Back-End d'applications web en ReactJs/NodeJs et de maitriser les outils essentiels pour le travail en équipe",
+  "skills-4": "Je pratique régulièrement une veille technologique afin d'optimiser mes compétences actuelles et d'en acquérir de nouvelles",
+  "languageFramework": "Full-stack",
+  "library": "librairies",
+  "test": "Tests automatisés",
+
+  "professionals": "professionnelles",
+  "training": "Personnelles",
+  "linkTo": "Visiter: ",
+  "complete": "Description complète sur Linkedin",
+
+  "digitalFactory": "Depuis 2022 je participe à la transformation numérique de la RATP en collaborant sur plusieurs projets Full-stack au sein de la Fabrique Digitale.",
+  "bootstrap": "La Fabrique Digitale utilise des frameworks de développement modernes pour créer des solutions innovantes et efficaces. Ces projets sont réalisés au sein d'équipes agiles, assurant une collaboration dynamique et une adaptation rapide aux besoins des clients.",
+
+  "coverage": "Pour la couverture des ",
+  "elections": "élections américaines de France 24",
+  "achieve": ", j'ai réalisé la partie front end de l'interface utilisateur permettant de consulter les résultats, de les modérer et de les mettre à disposition des outils graphiques.",
+  "interface": "L'interface",
+  "include": " incluait également l'édition de bandeaux d'informations ainsi que la publication des infographies antenne vers les réseaux sociaux du groupe France Médias Monde.",
+
+  "video": "Lire la vidéo",
+  "slider": "Ouvrir le carousel",
+
+  "licence": "J'ai eu pour mission la refonte complète de l'interface d'administration du ",
+  "serveur": "serveur de licences ",
+  "licenceSuite": "de l'entreprise vers ReactJs, permettant de visualiser et d'éditer des modèles de licences clients, incluant une gamme des produits proposés et de leur caractéristiques.",
+
+  "presidentialTitle": "Presidentielles",
+  "presidentialSub": "",
+  "senatTitle": "Chambre / Senat",
+  "senatSub": "",
+  "tickerTitle": "Ticker",
+  "tickerSub": "",
+
+  "lineshopDesc": "Site e-commerce de démonstration entièrement réalisé, combinant MongoDB Express React et NodeJs (aperçu en mode sandbox - formulaires désactivés)",
+  "visit": "Vister le site",
+
+  "smTitle": "Île Sainte Marie",
+  "smSub": "Projet de site autour de l'île Sainte Marie de Madagascar, entièrement responsive",
+
+  "ltdTitle": "LTD Car Service",
+  "ltdSub": "Refonte du site web d'un prestataire de vehicules de luxe avec chauffeur sur Paris",
+
+  "lbeTitle": "Le Bon Endroit",
+  "lbeSub": "Démo de site hôtelier réalisé avec Wordpress - Elémentor - Woocommerce",
+
+  "required": "Ces champs doivent etre renseignés",
+  "site": "Le site ",
+  "datas": " ne conserve aucunes données personnelles, ces dernières sont jointes à un email envoyé a Mr Eric Juquel, auteur et propriétaire du site",
+  "email": "Envoyer un mail ",
+  "tel": "Appeler "
+}

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import ButtonWave from "../shared/components/ButtonWave";
+import ButtonWave from "../shared/components/buttons/ButtonWave";
 
 export default function HomeView() {
   const { t } = useTranslation();

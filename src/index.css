@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Capriola&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Capriola&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @layer base {
@@ -18,13 +19,13 @@
     @apply text-2xl font-light text-medium;
   }
   h4 {
-    @apply text-4xl font-semibold bg-gradient-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent;
+    @apply font-montserrat text-4xl capitalize bg-gradient-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent font-light tracking-[0.00735rem];
   }
   h5 {
     @apply text-2xl font-normal;
   }
   h6 {
-    @apply text-xl font-light text-white/60;
+    @apply text-2xl font-light text-white/60;
   }
 
   aside {
@@ -41,6 +42,7 @@
 @theme {
   --font-montserrat: "Montserrat", "Roboto", "Helvetica", "Arial", sans-serif;
   --font-roboto: "Roboto", sans-serif;
+  --font-capriola: "Capriola", "Roboto", sans-serif;
 
   --color-primary: rgb(255, 183, 77);
   --color-secondary: rgb(77, 182, 172);
@@ -56,6 +58,11 @@
 
   --color-body-from: rgb(24, 26, 29);
   --color-body-to: rgba(13, 24, 36);
+
+  --color-title-first-from: rgb(252, 248, 90);
+  --color-title-first-to: rgb(254, 119, 90);
+  --color-title-last-from: rgb(254, 170, 90);
+  --color-title-last-to: rgb(218, 67, 68);
 
   --color-side-menu: #1c2430;
   --shadow-side-menu: 1px 0 5px 0 hsla(0, 0%, 100%, 0.295);

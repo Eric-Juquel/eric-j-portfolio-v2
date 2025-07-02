@@ -16,8 +16,8 @@ export default function Layout({
       </div>
       <div className="md:hidden block w-60">Burger Menu</div>
 
-      <main className="w-full h-full md:ml-60 md:w-[calc(100vw-15rem)]">
-        {children}
+      <main className="flex flex-col w-full h-full md:ml-60 md:w-[calc(100vw-16rem)] overflow-y-auto">
+        <section className="flex min-h-[100vh] p-20">{children}</section>
       </main>
     </>
   );

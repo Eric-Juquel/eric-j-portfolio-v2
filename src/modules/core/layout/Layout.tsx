@@ -8,15 +8,17 @@ export default function Layout({
 }) {
   return (
     <>
-      <div className="fixed bg-transparent w-40 h-20 top-4 -right-14 z-3">
+      <div className="fixed bg-transparent w-40 h-10 top-4 -right-14 z-3">
         <Languages />
       </div>
-      <div className="hidden md:block ">
+      <div className="hidden md:block w-60">
         <SideMenu />
       </div>
       <div className="md:hidden block w-60">Burger Menu</div>
 
-      <main>{children}</main>
+      <main className="w-full h-full md:ml-60 md:w-[calc(100vw-15rem)]">
+        {children}
+      </main>
     </>
   );
 }

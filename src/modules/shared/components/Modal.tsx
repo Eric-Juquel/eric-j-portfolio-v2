@@ -1,21 +1,19 @@
 import type { RefObject } from "react";
+import { useNavigate } from "react-router-dom";
 
 export type ModalContent = {
   title: string;
   description: string;
-  documentRef: string;
+  documentRef?: string;
 };
 
-export interface DownloadModalProps {
+export interface ModalProps {
   ref: RefObject<HTMLDialogElement | null>;
   modalContent: ModalContent;
 }
 
-export default function DownloadModal({
-  ref,
-  modalContent,
-}: DownloadModalProps) {
-  console.log(modalContent);
+export default function Modal({ ref, modalContent }: ModalProps) {
+  const navigate = useNavigate();
 
   return (
     <dialog
@@ -25,15 +23,22 @@ export default function DownloadModal({
       <h2 className="text-center">{modalContent.title}</h2>
       <h6 className=" mb-4 text-center">{modalContent.description}</h6>
       <form method="dialog" className="flex w-full items-center justify-evenly">
-        <a
-          href={modalContent.documentRef}
-          download
+        {modalContent.documentRef ? (
+          <a
+            href={modalContent.documentRef}
+            download
+            className="button-regular"
+            onClick={() => ref?.current?.close()}
+          >
+            Télecharger
+          </a>
+        ) : null}
+        <button
           className="button-regular"
-          onClick={() => ref?.current?.close()}
+          onClick={!modalContent.documentRef ? () => navigate("/") : undefined}
         >
-          Télecharger
-        </a>
-        <button className="button-regular">Sortir</button>
+          Sortir
+        </button>
       </form>
     </dialog>
   );

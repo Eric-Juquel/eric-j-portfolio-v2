@@ -76,5 +76,8 @@
   "site": "The site ",
   "datas": " does not store any personal data, these are attached to an email sent to Mr Eric Juquel, author and owner of the site",
   "email": "Send an email",
-  "tel": "Call "
+  "tel": "Call ",
+
+  "nftitle": "Page not found !",
+  "nfdescript": "Exit to return home page."
 }

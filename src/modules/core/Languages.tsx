@@ -22,7 +22,7 @@ export default function Languages() {
   }`;
 
   return (
-    <div className="inline-flex rounded-sm min-w-10  divide-x divide-transparent">
+    <div className="inline-flex rounded-sm h-8  divide-x divide-transparent text-sm">
       <button
         className={frButtonClass}
         onClick={() => i18n.changeLanguage("fr")}

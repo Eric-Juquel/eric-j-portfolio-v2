@@ -76,5 +76,8 @@
   "site": "Le site ",
   "datas": " ne conserve aucunes données personnelles, ces dernières sont jointes à un email envoyé a Mr Eric Juquel, auteur et propriétaire du site",
   "email": "Envoyer un mail ",
-  "tel": "Appeler "
+  "tel": "Appeler ",
+
+  "nftitle": "Page introuvable !",
+  "nfdescript": "Sortez pour retourner a l'accueil."
 }

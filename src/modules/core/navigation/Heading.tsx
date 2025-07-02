@@ -2,9 +2,7 @@ import { NavLink } from "react-router-dom";
 import Tooltip from "../../shared/components/Tooltip";
 import Logo from "../../../assets/logos/Logo1.svg?react";
 import { useRef, useState } from "react";
-import DownloadModal, {
-  type ModalContent,
-} from "../../shared/components/DownloadModal";
+import Modal, { type ModalContent } from "../../shared/components/Modal";
 import { useTranslation } from "react-i18next";
 
 export default function Heading() {
@@ -41,8 +39,8 @@ export default function Heading() {
 
   return (
     <div className="w-[90%] h-90 flex flex-col items-center justify-between">
-      <NavLink to="/">
-        <div className="flex flex-col h-80 p-4 justify-between rounded-md hover:bg-gray-700/60">
+      <NavLink className="w-full" to="/">
+        <div className=" flex flex-col h-80 p-4 justify-between rounded-md hover:bg-gray-700/60">
           <Logo className="h-40 w-40" />
           <div>
             <h2 className="mb-1">Eric</h2>
@@ -72,7 +70,7 @@ export default function Heading() {
           </button>
         </Tooltip>
       </div>
-      <DownloadModal ref={dialogRef} modalContent={modalContent} />
+      <Modal ref={dialogRef} modalContent={modalContent} />
     </div>
   );
 }

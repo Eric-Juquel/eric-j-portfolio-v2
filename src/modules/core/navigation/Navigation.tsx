@@ -5,7 +5,7 @@ import "./navigation.css";
 import { useTranslation } from "react-i18next";
 
 export interface NavigationProps {
-  closeBurger: () => void;
+  closeBurger?: () => void;
 }
 
 export default function Navigation({ closeBurger }: NavigationProps) {
@@ -22,10 +22,11 @@ export default function Navigation({ closeBurger }: NavigationProps) {
               key={item.label}
               className="relative group overflow-hidden nav-item"
               onClick={() => {
-                closeBurger();
+                closeBurger?.();
               }}
             >
               <NavLink
+                data-testid={`navigation-link-to-${item.label}`}
                 to={item.href}
                 onClick={scrollToTopHandler}
                 className=" relative flex justify-center  text-xl lg:text-[1rem] text-disabled py-4 px-18 z-10 items-center transition-colors ease-in-out hover:text-medium"

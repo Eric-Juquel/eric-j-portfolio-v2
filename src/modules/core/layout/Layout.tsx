@@ -12,10 +12,13 @@ export default function Layout({
       <div className="fixed bg-transparent w-40 h-10 top-4 -right-14 z-3">
         <Languages />
       </div>
-      <div className="hidden lg:block w-60">
+      <div data-testid="desktop-navigation" className="hidden lg:block w-60">
         <SideMenu />
       </div>
-      <div className="lg:hidden block cursor-pointer">
+      <div
+        data-testid="mobile-navigation"
+        className="lg:hidden block cursor-pointer"
+      >
         <Burger />
       </div>
 

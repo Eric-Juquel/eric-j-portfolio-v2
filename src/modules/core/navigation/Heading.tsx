@@ -6,7 +6,7 @@ import Modal, { type ModalContent } from "../../shared/components/Modal";
 import { useTranslation } from "react-i18next";
 
 export interface HeadingProps {
-  closeBurger: () => void;
+  closeBurger?: () => void;
 }
 
 export default function Heading({ closeBurger }: HeadingProps) {
@@ -47,7 +47,7 @@ export default function Heading({ closeBurger }: HeadingProps) {
         <div
           className=" flex h-50  lg:flex-col lg:h-80 p-4 justify-between rounded-md hover:bg-gray-700/60"
           onClick={() => {
-            closeBurger();
+            closeBurger?.();
             window.scrollTo({
               top: 0,
               behavior: "smooth",

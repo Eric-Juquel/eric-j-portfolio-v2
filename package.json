@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "NODE_NO_WARNINGS=1 test:cov test:default",
+    "test:default": "vitest run",
+    "test:watch": "> console-errors.log && NODE_NO_WARNINGS=1 vitest",
+    "test:cov": "NODE_NO_WARNINGS=1 vitest run --coverage"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
@@ -23,17 +27,24 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@types/react-i18next": "^7.8.3",
     "@vitejs/plugin-react": "^4.5.2",
+    "@vitest/coverage-v8": "^3.2.4",
     "eslint": "^9.29.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.2.0",
+    "jsdom": "^26.1.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.34.1",
     "vite": "^7.0.0",
-    "vite-plugin-svgr": "^4.3.0"
+    "vite-plugin-svgr": "^4.3.0",
+    "vitest": "^3.2.4"
   }
 }

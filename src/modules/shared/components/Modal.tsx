@@ -34,6 +34,7 @@ export default function Modal({ ref, modalContent }: ModalProps) {
           </a>
         ) : null}
         <button
+          type="button"
           className="button-regular"
           onClick={!modalContent.documentRef ? () => navigate("/") : undefined}
         >

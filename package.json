@@ -8,7 +8,6 @@
     "build": "tsc -b && vite build",
     "lint": "biome lint .",
     "format": "biome format .",
-    "format:check": "biome format --check .",
     "preview": "vite preview",
     "test": "NODE_NO_WARNINGS=1 test:cov test:default",
     "test:default": "vitest run",

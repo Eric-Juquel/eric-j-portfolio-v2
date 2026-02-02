@@ -1,9 +1,9 @@
-import { NavLink } from "react-router-dom";
-import Tooltip from "../../shared/components/Tooltip";
-import Logo from "../../../assets/logos/Logo1.svg?react";
 import { useRef, useState } from "react";
-import Modal, { type ModalContent } from "../../shared/components/Modal";
 import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
+import Logo from "../../../assets/logos/Logo1.svg?react";
+import Modal, { type ModalContent } from "../../shared/components/Modal";
+import Tooltip from "../../shared/components/Tooltip";
 
 export interface HeadingProps {
   closeBurger?: () => void;
@@ -44,7 +44,8 @@ export default function Heading({ closeBurger }: HeadingProps) {
   return (
     <div className="w-[90%]  lg:h-90 flex flex-col items-center justify-between">
       <NavLink className="w-full" to="/">
-        <div
+        <button
+          type="button"
           className=" flex h-50  lg:flex-col lg:h-80 p-4 justify-between rounded-md hover:bg-gray-700/60"
           onClick={() => {
             closeBurger?.();
@@ -59,7 +60,7 @@ export default function Heading({ closeBurger }: HeadingProps) {
             <h2 className="mb-1">Eric</h2>
             <h3>{t("title")}</h3>
           </div>
-        </div>
+        </button>
       </NavLink>
       <div className="flex p-2 items-center justify-around w-full">
         <Tooltip text={t("cv")} place="top">

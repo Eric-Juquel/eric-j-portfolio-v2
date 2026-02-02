@@ -23,6 +23,11 @@ export default function Burger() {
         htmlFor="navi"
         className="fixed top-4 left-4 z-200 text-center cursor-pointer h-16 w-16 rounded-full bg-transparent"
         onClick={checkHandler}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            checkHandler();
+          }
+        }}
       >
         <span className="icon peer-checked:bg-transparent">&nbsp;</span>
       </label>

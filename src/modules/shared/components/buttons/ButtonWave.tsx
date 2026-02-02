@@ -13,6 +13,7 @@ export default function ButtonWave({ text }: ButtonWaveProps) {
           className="group flex w-full text-center bg-transparent text-secondary text-xl capitalize"
         >
           <svg className="absolute left-0 top-0 w-full h-15 ">
+            <title>Form Contact button with wave animation</title>
             <rect
               x="0"
               y="0"

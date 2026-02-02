@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import Modal from "../../shared/components/Modal";
 import { useTranslation } from "react-i18next";
+import Modal from "../../shared/components/Modal";
 
 export default function NotFound() {
   const { t } = useTranslation();

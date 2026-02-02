@@ -1,14 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { describe, expect, it } from "vitest";
 import Tooltip from "./Tooltip";
-import { describe, it, expect } from "vitest";
 
 describe("Tooltip", () => {
   it("displays the tooltip text", () => {
     render(
       <Tooltip text="Tooltip text" place="top">
-        <button>Hover me</button>
-      </Tooltip>
+        <button type="button">Hover me</button>
+      </Tooltip>,
     );
 
     const tooltip = screen.getByRole("tooltip");
@@ -19,7 +19,7 @@ describe("Tooltip", () => {
     render(
       <Tooltip text="Tooltip above" place="top">
         <span>Hover</span>
-      </Tooltip>
+      </Tooltip>,
     );
 
     const tooltip = screen.getByRole("tooltip");
@@ -31,7 +31,7 @@ describe("Tooltip", () => {
     render(
       <Tooltip text="Tooltip below" place="bottom">
         <span>Hover</span>
-      </Tooltip>
+      </Tooltip>,
     );
 
     const tooltip = screen.getByRole("tooltip");
@@ -43,8 +43,8 @@ describe("Tooltip", () => {
     const user = userEvent.setup();
     render(
       <Tooltip text="Visible on hover" place="top">
-        <button>Hover me</button>
-      </Tooltip>
+        <button type="button">Hover me</button>
+      </Tooltip>,
     );
 
     const button = screen.getByRole("button", { name: /hover me/i });

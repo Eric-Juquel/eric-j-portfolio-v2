@@ -80,6 +80,11 @@
   .peer:checked + label .icon {
     background-color: transparent;
   }
+
+  /* Card */
+  .card-paper {
+    @apply rounded border border-gray-600 bg-paper p-4;
+  }
 }
 
 @theme {

@@ -1,3 +1,11 @@
+import { useTranslation } from "react-i18next";
+
 export default function ProgressBox() {
-  return <div>ProgressBox</div>;
+  const { t } = useTranslation();
+
+  return (
+    <div className="card-paper">
+      <h4>{t("languageFramework")}</h4>
+    </div>
+  );
 }

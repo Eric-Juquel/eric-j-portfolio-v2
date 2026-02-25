@@ -34,6 +34,11 @@
 }
 
 @layer components {
+  /* Typography */
+  .body1 {
+    @apply text-[20px] font-roboto font-normal leading-[1.5] tracking-[0.00938em];
+  }
+
   .button-regular {
     @apply cursor-pointer text-sm text-black bg-secondary hover:bg-secondary-hover px-4 py-2 min-w-16 rounded-sm uppercase transition-colors ease-in-out;
   }

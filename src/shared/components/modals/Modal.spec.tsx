@@ -1,8 +1,8 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import Modal, { type ModalContent } from "./Modal";
-import { describe, it, expect, vi } from "vitest";
-import { MemoryRouter, useNavigate } from "react-router-dom";
+import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
+import { MemoryRouter, useNavigate } from "react-router-dom";
+import { describe, expect, it, vi } from "vitest";
+import Modal, { type ModalContent } from "./Modal";
 
 // Mock de useNavigate
 vi.mock("react-router-dom", async () => {
@@ -24,13 +24,13 @@ describe("Modal component", () => {
     render(
       <MemoryRouter>
         <Modal ref={ref} modalContent={baseContent} />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     expect(screen.getByText("Titre test")).toBeInTheDocument();
     expect(screen.getByText("Description test")).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: /sortir/i, hidden: true })
+      screen.getByRole("button", { name: /sortir/i, hidden: true }),
     ).toBeInTheDocument();
   });
 
@@ -45,7 +45,7 @@ describe("Modal component", () => {
             documentRef: "/dummy.pdf",
           }}
         />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     const link = screen.getByRole("link", {
@@ -65,11 +65,11 @@ describe("Modal component", () => {
     render(
       <MemoryRouter>
         <Modal ref={ref} modalContent={baseContent} />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     fireEvent.click(
-      screen.getByRole("button", { name: /sortir/i, hidden: true })
+      screen.getByRole("button", { name: /sortir/i, hidden: true }),
     );
     expect(navigateMock).toHaveBeenCalledWith("/");
   });

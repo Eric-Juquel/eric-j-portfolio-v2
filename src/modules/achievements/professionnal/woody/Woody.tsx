@@ -1,11 +1,21 @@
+import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import ReactPlayer from "react-player";
 import { NavLink } from "react-router-dom";
+import CarouselModal from "@/shared/components/modals/CarouselModal";
 import Tooltip from "@/shared/components/Tooltip";
 import WoodySVG from "./WoodySVG";
+import { getElectionsUs } from "./woody-carousel.data";
+
+const SLIDES = getElectionsUs();
 
 export default function Woody() {
   const { t } = useTranslation();
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  const openModal = () => {
+    dialogRef.current?.showModal();
+  };
 
   return (
     <div className="flex flex-col w-full items-center gap-20">
@@ -63,10 +73,17 @@ export default function Woody() {
               alt="UI Elections Us France 24"
               width={400}
               className="m-auto"
+              onClick={openModal}
+              onKeyDown={(e) => e.key === "Enter" && openModal()}
             />
           </Tooltip>
         </div>
       </div>
+      <CarouselModal
+        dialogRef={dialogRef}
+        slides={SLIDES}
+        title={t("presidentialGalery")}
+      />
     </div>
   );
 }

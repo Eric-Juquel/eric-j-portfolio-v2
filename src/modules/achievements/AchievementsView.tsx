@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import Frog from "./professionnal/Frog";
-import Woody from "./professionnal/Woody";
+import Frog from "./professionnal/frog/Frog";
+import Woody from "./professionnal/woody/Woody";
 
 function AchievementsView() {
   const { t } = useTranslation();

@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
-import Logo from "../../../assets/logos/Logo1.svg?react";
-import Modal, { type ModalContent } from "../../shared/components/Modal";
-import Tooltip from "../../shared/components/Tooltip";
+import Logo from "@/assets/logos/Logo1.svg?react";
+import Modal, { type ModalContent } from "@/shared/components/modals/Modal";
+import Tooltip from "@/shared/components/Tooltip";
 
 export interface HeadingProps {
   closeBurger?: () => void;

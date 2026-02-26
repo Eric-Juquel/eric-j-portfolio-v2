@@ -6,11 +6,11 @@
 @layer base {
   body {
     font-family: var(--font-roboto);
-    @apply max-h-[100vh] text-light block bg-gradient-to-br from-body-from to-body-to;
+    @apply max-h-screen text-light block bg-linear-to-br from-body-from to-body-to;
   }
 
   h1 {
-    @apply text-7xl font-bold bg-gradient-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent;
+    @apply text-7xl font-bold bg-linear-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent;
   }
   h2 {
     @apply text-[2.125rem] text-light -tracking-tighter;
@@ -19,7 +19,7 @@
     @apply text-2xl font-light text-medium;
   }
   h4 {
-    @apply font-montserrat text-4xl capitalize bg-gradient-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent font-light tracking-[0.00735rem];
+    @apply font-montserrat text-4xl capitalize bg-linear-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent font-light tracking-[0.00735rem];
   }
   h5 {
     @apply text-2xl font-normal;
@@ -36,7 +36,7 @@
 @layer components {
   /* Typography */
   .body1 {
-    @apply text-[20px] font-roboto font-normal leading-[1.5] tracking-[0.00938em];
+    @apply text-[20px] font-roboto font-normal leading-normal tracking-[0.00938em];
   }
 
   .button-regular {
@@ -45,7 +45,7 @@
 
   /* burger menu */
   .icon {
-    @apply relative mt-8 inline-block w-[2.4rem] h-[0.25rem] bg-white transition-all;
+    @apply relative mt-8 inline-block w-[2.4rem] h-1 bg-white transition-all;
   }
 
   .icon::before,
@@ -83,7 +83,7 @@
 
   /* Card */
   .card-paper {
-    @apply rounded border border-gray-600 bg-paper p-4;
+    @apply rounded border border-gray-600 bg-paper p-4 flex flex-col items-center gap-4;
   }
 }
 

@@ -1,32 +1,29 @@
-// utils/toast.ts
 import { toast } from "react-toastify";
 
+const getStyle = (bgVar: string, colorVar: string, borderVar: string) => ({
+  background:
+    getComputedStyle(document.documentElement).getPropertyValue(bgVar) ||
+    "#1c2430",
+  color:
+    getComputedStyle(document.documentElement).getPropertyValue(colorVar) ||
+    "#fff",
+  border: `1px solid ${getComputedStyle(document.documentElement).getPropertyValue(borderVar) || "#4db6ac"}`,
+});
+
 export const toastSuccess = (message: string) => {
-  const style = {
-    background:
-      getComputedStyle(document.documentElement).getPropertyValue(
-        "--color-paper",
-      ) || "#1c2430",
-    color:
-      getComputedStyle(document.documentElement).getPropertyValue(
-        "--color-light",
-      ) || "#fff",
-    border: `1px solid ${getComputedStyle(document.documentElement).getPropertyValue("--color-secondary") || "#4db6ac"}`,
-  };
-  toast.success(message, { style });
+  toast.success(message, {
+    style: getStyle("--color-paper", "--color-light", "--color-secondary"),
+  });
 };
 
 export const toastError = (message: string) => {
-  const style = {
-    background:
-      getComputedStyle(document.documentElement).getPropertyValue(
-        "--color-paper",
-      ) || "#1c2430",
-    color:
-      getComputedStyle(document.documentElement).getPropertyValue(
-        "--color-warning",
-      ) || "#ff4080",
-    border: `1px solid ${getComputedStyle(document.documentElement).getPropertyValue("--color-warning") || "#ff4080"}`,
-  };
-  toast.error(message, { style });
+  toast.error(message, {
+    style: getStyle("--color-paper", "--color-warning", "--color-warning"),
+  });
+};
+
+export const toastInfo = (message: string) => {
+  toast.info(message, {
+    style: getStyle("--color-paper", "--color-light", "--color-secondary"),
+  });
 };

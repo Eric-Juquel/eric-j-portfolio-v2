@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import ButtonWave from "@/shared/components/buttons/ButtonWave";
 import AchievementsView from "../achievements/AchievementsView";
+import ContactView from "../contact/ContactView";
 import SkillsView from "../skills/SkillsView";
 
 export default function HomeView() {
@@ -33,6 +34,7 @@ export default function HomeView() {
 
       <SkillsView />
       <AchievementsView />
+      <ContactView />
     </div>
   );
 }

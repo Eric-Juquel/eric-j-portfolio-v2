@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import HomeView from "./HomeView";
-import { describe, it, expect } from "vitest";
 import { I18nextProvider } from "react-i18next";
-import i18n from "../../tests/i18nForTests"; // adapte le chemin
-import { withRouter } from "../../tests/testing"; // adapte le chemin
+import { describe, expect, it } from "vitest";
+import i18n from "../../tests/i18nForTests";
+import { withRouter } from "../../tests/testing";
+import HomeView from "./HomeView";
 
 describe("HomeView component", () => {
   it("renders translated title, subtitle and contact button", () => {
@@ -14,14 +14,14 @@ describe("HomeView component", () => {
         <I18nextProvider i18n={i18n}>
           <HomeView />
         </I18nextProvider>
-      </Wrapper>
+      </Wrapper>,
     );
 
     const matches = screen.getAllByText(/title/i);
     expect(matches.length).toBeGreaterThanOrEqual(1);
 
     expect(
-      screen.getByRole("link", { name: /contactme/i })
+      screen.getByRole("link", { name: /contactme/i }),
     ).toBeInTheDocument();
   });
 });

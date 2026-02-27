@@ -43,6 +43,10 @@
     @apply cursor-pointer text-sm text-black bg-secondary hover:bg-secondary-hover px-4 py-2 min-w-16 rounded-sm uppercase transition-colors ease-in-out;
   }
 
+  .button-secondary {
+    @apply cursor-pointer text-sm text-black bg-primary hover:bg-primary-hover px-4 py-2 min-w-16 rounded-sm uppercase transition-colors ease-in-out;
+  }
+
   /* burger menu */
   .icon {
     @apply relative mt-8 inline-block w-[2.4rem] h-1 bg-white transition-all;
@@ -93,6 +97,7 @@
   --font-capriola: "Capriola", "Roboto", sans-serif;
 
   --color-primary: rgb(255, 183, 77);
+  --color-primary-hover: rgb(255, 138, 101);
   --color-secondary: rgb(77, 182, 172);
   --color-secondary-hover: rgb(53, 127, 120);
   --color-warning: rgb(229, 0, 113);

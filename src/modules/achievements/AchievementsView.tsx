@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import Divider from "@/shared/components/Divider";
+import LineshopCard from "./personnal/lineshop/LineshopCard";
 import Frog from "./professionnal/frog/Frog";
 import Woody from "./professionnal/woody/Woody";
 
@@ -25,6 +26,14 @@ function AchievementsView() {
         <div className="self-end relative -top-9 mr-10 bg-[linear-gradient(to_bottom,rgba(28,36,48,0)_0%,rgba(28,36,48,0)_49%,rgb(28,36,48)_58%)]     ">
           <h4 className=" text-secondary text-3xl">{t("training")}</h4>
         </div>
+
+        <LineshopCard
+          iframeUrl="https://lineshopgaming.vercel.app/"
+          imageUrl="https://res.cloudinary.com/ericjuquel94/image/upload/v1638363590/portfolio/lineshop/lineshop-home_nssvt5_ahznme.webp"
+          title="LineShop Gaming - MERN stack"
+          subtitle={t("lineshopDesc")}
+          visitUrl="https://lineshopgaming.vercel.app/"
+        />
       </section>
     </div>
   );

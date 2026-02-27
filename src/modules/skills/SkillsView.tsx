@@ -7,7 +7,7 @@ import { list_1, list_2, list_3, list_4 } from "./skills.const";
 export default function SkillsView() {
   const { t } = useTranslation();
   return (
-    <div id="skills" className="flex flex-col w-full px-3 py-5">
+    <div id="skills" className="flex flex-col w-full px-3 pt-20">
       <div className="h-33 w-fit">
         <h4 className="text-6xl">{t("skills")}</h4>
       </div>

@@ -1,6 +1,6 @@
 import { render, screen, within } from "@testing-library/react";
+import { beforeEach, describe, expect, it } from "vitest";
 import App from "./App";
-import { describe, it, expect, beforeEach } from "vitest";
 import { withRouter } from "./tests/testing";
 
 describe("App routing", () => {
@@ -16,14 +16,14 @@ describe("App routing", () => {
     render(
       <Wrapper>
         <App />
-      </Wrapper>
+      </Wrapper>,
     );
 
     const nav = screen.getByTestId("desktop-navigation");
 
     const homeLink = within(nav).getByTestId("navigation-link-to-home");
     const achievementsLink = within(nav).getByTestId(
-      "navigation-link-to-achievements"
+      "navigation-link-to-achievements",
     );
     const skillsLink = within(nav).getByTestId("navigation-link-to-skills");
     const contactLink = within(nav).getByTestId("navigation-link-to-contact");

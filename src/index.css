@@ -118,5 +118,6 @@
   --color-title-last-to: rgb(218, 67, 68);
 
   --color-side-menu: #1c2430;
-  --shadow-side-menu: 1px 0 5px 0 hsla(0, 0%, 100%, 0.295);
+  --shadow-side-menu:
+    0 0 0 1px rgba(255, 255, 255, 0.06), 4px 0 18px rgba(255, 255, 255, 0.08);
 }

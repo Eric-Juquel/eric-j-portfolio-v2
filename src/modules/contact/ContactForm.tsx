@@ -24,15 +24,26 @@ export default function ContactForm() {
     console.log("Form submitted:", data);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      // Appel à l'API serverless
+      const res = await fetch("http://localhost:3000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-      setStatus("idle");
-      reset();
+      const result = await res.text();
+      const json = JSON.parse(result);
 
+      if (!res.ok || json.status === "error") {
+        throw new Error(json.error || "Error sending message");
+      }
       toastSuccess(t("sent"));
-    } catch {
-      setStatus("idle");
+      reset();
+    } catch (err) {
+      console.error("Error:", err);
       toastError(t("errorSent"));
+    } finally {
+      setStatus("idle"); // Reset status
     }
   };
 
@@ -58,7 +69,7 @@ export default function ContactForm() {
             <input
               {...register("email")}
               type="email"
-              placeholder={t("email")}
+              placeholder={"Email"}
               className="w-full bg-paper border border-white/10 rounded px-4 py-3 text-light focus:outline-none focus:border-secondary"
             />
             <ErrorMessage message={errors.email?.message} />

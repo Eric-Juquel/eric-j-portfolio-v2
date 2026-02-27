@@ -1,4 +1,3 @@
-import { Train } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Divider from "@/shared/components/Divider";
 import LineshopCard from "./personnal/lineshop/LineshopCard";

@@ -7,7 +7,7 @@ export const licenseServeur: Slide[] = [
     url: "https://res.cloudinary.com/ericjuquel94/image/upload/v1638351902/portfolio/woody/licences-blur_s9hryc.png",
     title: "Licenses",
     subtitle: "",
-    alt: "icenses",
+    alt: "Licenses",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const licenseServeur: Slide[] = [
     url: "https://res.cloudinary.com/ericjuquel94/image/upload/v1638351897/portfolio/woody/createlicence_vzsvs1.png",
     title: "Create / Edit License",
     subtitle: "",
-    alt: "reate / Edit License",
+    alt: "Create / Edit License",
   },
   {
     id: 4,

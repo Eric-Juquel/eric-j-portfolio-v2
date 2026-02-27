@@ -1,19 +1,23 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ReactPlayer from "react-player";
 import { NavLink } from "react-router-dom";
+import type { Slide } from "@/shared/components/carousel/EmblaCarousel";
 import CarouselModal from "@/shared/components/modals/CarouselModal";
 import Tooltip from "@/shared/components/Tooltip";
 import WoodySVG from "./WoodySVG";
-import { getElectionsUs } from "./woody-carousel.data";
+import { getElectionsUs, licenseServeur } from "./woody-carousel.data";
 
-const SLIDES = getElectionsUs();
+const US_SLIDES: Slide[] = getElectionsUs();
+const LICENCE_SLIDES: Slide[] = licenseServeur;
 
 export default function Woody() {
   const { t } = useTranslation();
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const [currentSlides, setCurrentSlides] = useState<Slide[]>([]);
 
-  const openModal = () => {
+  const openModal = (slides: Slide[]) => {
+    setCurrentSlides(slides);
     dialogRef.current?.showModal();
   };
 
@@ -73,16 +77,42 @@ export default function Woody() {
               alt="UI Elections Us France 24"
               width={400}
               className="m-auto"
-              onClick={openModal}
-              onKeyDown={(e) => e.key === "Enter" && openModal()}
+              onClick={() => openModal(US_SLIDES)}
+              onKeyDown={(e) => e.key === "Enter" && openModal(US_SLIDES)}
             />
           </Tooltip>
+        </div>
+
+        <div className="order-6 lg:col-start-1 lg:row-start-3 min-[440px]:block self-center">
+          <Tooltip text={t("video")} place="top">
+            <div className="relative  bg-white/10 p-2 rounded-md w-4/5 m-auto">
+              <img
+                src="https://res.cloudinary.com/ericjuquel94/image/upload/v1638351902/portfolio/woody/licences-blur_s9hryc.png"
+                alt="Serveur de licences"
+                width={400}
+                className="m-auto"
+                onClick={() => openModal(LICENCE_SLIDES)}
+                onKeyDown={(e) =>
+                  e.key === "Enter" && openModal(LICENCE_SLIDES)
+                }
+              />
+            </div>
+          </Tooltip>
+        </div>
+
+        <div className="order-5 lg:col-start-2 lg:row-start-3 min-[440px]:block self-center">
+          <p className="body1 ">
+            {t("licence")}
+            <span className="text-primary">{t("serveur")}</span>
+            {t("licenceSuite")}
+          </p>
         </div>
       </div>
       <CarouselModal
         dialogRef={dialogRef}
-        slides={SLIDES}
+        slides={currentSlides}
         title={t("presidentialGalery")}
+        overlay={currentSlides === LICENCE_SLIDES}
       />
     </div>
   );

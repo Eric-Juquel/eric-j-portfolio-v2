@@ -31,7 +31,7 @@ export const skills = [
   { label: "CSS / Tailwind", value: 90, color: "var(--color-secondary)" },
   { label: "TypeScript", value: 91, color: "var(--color-warning)" },
   { label: "Node.js", value: 85, color: "var(--color-primary)" },
-  { label: "Nest.js", value: 92, color: "var(--color-secondary)" },
+  { label: "Nest.js", value: 83, color: "var(--color-secondary)" },
 ];
 
 export const libraries1 = [

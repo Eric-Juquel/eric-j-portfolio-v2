@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import Divider from "@/shared/components/Divider";
 import Frog from "./professionnal/frog/Frog";
 import Woody from "./professionnal/woody/Woody";
 
@@ -6,7 +7,7 @@ function AchievementsView() {
   const { t } = useTranslation();
 
   return (
-    <div id="achievements" className="flex flex-col  w-full px-3 py-5 gap-20">
+    <div id="achievements" className="flex flex-col  w-full px-3  pt-20 gap-20">
       <div className="h-33 w-fit">
         <h4 className="text-6xl">{t("achievements")}</h4>
       </div>
@@ -17,7 +18,7 @@ function AchievementsView() {
         </div>
 
         <Frog />
-        <div className="my-6 h-px bg-gray-600 w-2/3"></div>
+        <Divider />
         <Woody />
       </section>
       <section className=" card-paper relative">

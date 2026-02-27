@@ -1,6 +1,8 @@
+import { Train } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Divider from "@/shared/components/Divider";
 import LineshopCard from "./personnal/lineshop/LineshopCard";
+import TrainingSites from "./personnal/trainig-sites/TrainingSites";
 import Frog from "./professionnal/frog/Frog";
 import Woody from "./professionnal/woody/Woody";
 
@@ -34,6 +36,8 @@ function AchievementsView() {
           subtitle={t("lineshopDesc")}
           visitUrl="https://lineshopgaming.vercel.app/"
         />
+        <Divider />
+        <TrainingSites />
       </section>
     </div>
   );

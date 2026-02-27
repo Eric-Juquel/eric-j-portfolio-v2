@@ -23,7 +23,7 @@ export default function Layout({
       </div>
 
       <main className="flex flex-col w-full h-full lg:ml-60 lg:max-w-[calc(100vw-16rem)] overflow-y-auto">
-        <section className="flex min-h-[100vh] p-20">{children}</section>
+        <section className="flex min-h-screen p-20 pt-0">{children}</section>
       </main>
     </>
   );

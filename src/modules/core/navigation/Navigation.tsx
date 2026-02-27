@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { scrollToTopHandler } from "@/shared/utils";
+import { scrollToTopHandler } from "@/shared/utils/scroll.utils";
 import { APP_ROUTES } from "../routes";
 import "./navigation.css";
 import { useTranslation } from "react-i18next";

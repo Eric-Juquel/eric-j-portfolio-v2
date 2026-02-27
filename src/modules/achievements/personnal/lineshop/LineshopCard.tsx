@@ -19,7 +19,7 @@ export default function LineshopCard({
   const { t } = useTranslation();
 
   return (
-    <div className="max-w-6xl w-full">
+    <div className="max-w-6xl w-full mb-10">
       {/* iframe pour grand écran */}
       <iframe
         src={iframeUrl}

@@ -11,7 +11,7 @@ export default function SkillsView() {
       <div className="h-33 w-fit">
         <h4 className="text-6xl">{t("skills")}</h4>
       </div>
-      <div className="grid grid-cols-1 gap-6 mb-10 lg:grid-cols-2  ">
+      <div className="grid grid-cols-1 gap-6 mb-10 lg:grid-cols-2">
         <SkillParagraph
           label={t("skills-1")}
           list={list_1}

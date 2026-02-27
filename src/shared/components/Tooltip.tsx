@@ -15,7 +15,7 @@ export default function Tooltip({ children, text, place }: TooltipProps) {
       <span
         role="tooltip"
         id="tooltip-id"
-        className={`${tooltipPlace} absolute left-1/2 transform -translate-x-1/2  hidden group-hover:block bg-white text-gray-800 text-xs rounded py-1 px-2 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-center `}
+        className={`${tooltipPlace} absolute left-1/2 transform -translate-x-1/2  hidden group-hover:block bg-white text-gray-800 text-xs rounded py-1 px-2 z-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-center font-roboto`}
       >
         {text}
       </span>

@@ -21,7 +21,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
-    "types": ["node", "./types/vercel-node"]
+    "types": ["node"]
   },
-  "include": ["api", "vite.config.ts", "types"]
+  "include": ["api", "vite.config.ts"]
 }

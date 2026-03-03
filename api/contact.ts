@@ -1,4 +1,3 @@
-// api/contact.ts
 import sgMail, { type MailDataRequired } from "@sendgrid/mail";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { z } from "zod";

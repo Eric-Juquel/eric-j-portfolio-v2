@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import "react-toastify/dist/ReactToastify.css";
+import ButtonFill from "@/shared/components/buttons/ButtonFill";
 import { toastError, toastSuccess } from "@/shared/utils/toast.utils";
 import { type ContactFormData, contactSchema } from "./contact.schema";
 
@@ -100,13 +101,11 @@ export default function ContactForm() {
         </div>
 
         {/* Submit */}
-        <button
+        <ButtonFill
           type="submit"
           disabled={isSubmitting || status === "sending"}
-          className="button-secondary disabled:opacity-50"
-        >
-          {status === "sending" ? t("sending") : t("submit")}
-        </button>
+          text={status === "sending" ? t("sending") : t("submit")}
+        />
       </form>
     </div>
   );

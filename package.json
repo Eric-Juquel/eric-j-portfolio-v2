@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:api": "NODE_TLS_REJECT_UNAUTHORIZED=0 npx vercel dev",
     "build": "tsc -b && vite build",
     "lint": "biome lint .",
     "format": "biome format .",

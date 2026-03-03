@@ -23,7 +23,7 @@ export default function ButtonWave({ text }: ButtonWaveProps) {
               className="fill-none stroke-secondary stroke-2 transition-all duration-500 ease-linear [stroke-dasharray:600,0]  group-hover:[stroke-dasharray:100,300]  group-hover:[stroke-dashoffset:120]  group-hover:[transition:all_1.35s_cubic-bezier(0.19,1,0.22,1)]"
             />
           </svg>
-          <span className="mt-4 mx-auto translate-y-0 transition-transform duration-300 group-active:translate-y-[3px]">
+          <span className="mt-4 mx-auto translate-y-0 transition-transform duration-300 group-active:translate-y-0.75">
             {text}
           </span>
         </NavLink>

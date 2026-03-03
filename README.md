@@ -36,11 +36,28 @@ Personal portfolio showcasing Eric Juquel's professional experience, skills, and
 # Install dependencies
 pnpm install
 
-# Start the development server
+# Start the development server only (no API)
 pnpm dev
 ```
 
 Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### With the serverless API (contact form)
+
+The `api/contact.ts` function runs via **Vercel CLI**, which emulates the Vercel runtime locally and serves both the frontend and the API on the same port.
+
+```bash
+# Link the project to your Vercel account (one-time)
+npx vercel link
+
+# Start the full dev environment (Vite + serverless API)
+pnpm dev:api
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser (Vercel CLI uses port 3000 by default).
+
+> **Note:** `pnpm dev` alone is sufficient for all frontend work. Use `pnpm dev:api` only when you need to test the contact form end-to-end.
+> `NODE_TLS_REJECT_UNAUTHORIZED=0` is set automatically in the script to bypass SSL certificate errors that can occur behind a corporate proxy.
 
 ---
 
@@ -63,17 +80,18 @@ For production, set these variables in the **Vercel Dashboard → Project Settin
 
 ## Available Scripts
 
-| Script            | Description                          |
-| ----------------- | ------------------------------------ |
-| `pnpm dev`        | Start development server with HMR    |
-| `pnpm build`      | Type-check + production build        |
-| `pnpm type-check` | TypeScript check without building    |
-| `pnpm lint`       | Lint with Biome                      |
-| `pnpm format`     | Auto-format with Biome               |
-| `pnpm preview`    | Preview the production build locally |
-| `pnpm test`       | Run all tests once                   |
-| `pnpm test:watch` | Run tests in watch mode              |
-| `pnpm test:cov`   | Run tests with coverage report       |
+| Script            | Description                           |
+| ----------------- | ------------------------------------- |
+| `pnpm dev`        | Start Vite dev server (frontend only) |
+| `pnpm dev:api`    | Start Vercel CLI dev (frontend + API) |
+| `pnpm build`      | Type-check + production build         |
+| `pnpm type-check` | TypeScript check without building     |
+| `pnpm lint`       | Lint with Biome                       |
+| `pnpm format`     | Auto-format with Biome                |
+| `pnpm preview`    | Preview the production build locally  |
+| `pnpm test`       | Run all tests once                    |
+| `pnpm test:watch` | Run tests in watch mode               |
+| `pnpm test:cov`   | Run tests with coverage report        |
 
 ---
 

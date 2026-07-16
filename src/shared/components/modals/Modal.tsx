@@ -18,6 +18,9 @@ export default function Modal({ ref, modalContent }: ModalProps) {
   return (
     <dialog
       ref={ref}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) ref?.current?.close();
+      }}
       className="fixed bg-paper top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  rounded-md p-6 w-[90%] max-w-md  backdrop:bg-black/40 backdrop:backdrop-blur-sm z-50"
     >
       <h2 className="text-center">{modalContent.title}</h2>
@@ -34,7 +37,7 @@ export default function Modal({ ref, modalContent }: ModalProps) {
           </a>
         ) : null}
         <button
-          type="button"
+          type="submit"
           className="button-regular"
           onClick={!modalContent.documentRef ? () => navigate("/") : undefined}
         >

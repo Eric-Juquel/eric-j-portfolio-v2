@@ -21,9 +21,12 @@ export default function CarouselModal({
   return (
     <dialog
       ref={dialogRef}
-      className="fixed bg-paper top-1/2 left-1/2 
-      -translate-x-1/2 -translate-y-1/2 
-      rounded-md p-6 w-[95%] max-w-6xl 
+      onClick={(e) => {
+        if (e.target === e.currentTarget) dialogRef?.current?.close();
+      }}
+      className="fixed bg-paper top-1/2 left-1/2
+      -translate-x-1/2 -translate-y-1/2
+      rounded-md p-6 w-[95%] max-w-6xl
       backdrop:bg-black/50 backdrop:backdrop-blur-sm z-50 outline-none"
     >
       {title && <h2 className="text-center mb-6">{title}</h2>}

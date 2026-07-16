@@ -71,17 +71,17 @@
     top: 0.7rem;
   }
 
-  .peer:checked + label .icon::before {
+  .icon.is-open::before {
     top: 0;
     transform: rotate(135deg);
   }
 
-  .peer:checked + label .icon::after {
+  .icon.is-open::after {
     top: 0;
     transform: rotate(-135deg);
   }
 
-  .peer:checked + label .icon {
+  .icon.is-open {
     background-color: transparent;
   }
 

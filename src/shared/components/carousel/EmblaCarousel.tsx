@@ -1,5 +1,4 @@
 import type { EmblaOptionsType } from "embla-carousel";
-import Fade from "embla-carousel-fade";
 import useEmblaCarousel from "embla-carousel-react";
 import { useEffect } from "react";
 import EmblaArrows from "./EmblaArrows";
@@ -20,7 +19,7 @@ interface Props {
 }
 
 export default function EmblaCarousel({ slides, options }: Props) {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Fade()]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
   const { canScrollPrev, canScrollNext, scrollPrev, scrollNext } =
     useEmblaNavigation(emblaApi);

@@ -73,30 +73,38 @@ export default function Woody() {
 
         <div className="order-4 lg:col-start-2 lg:row-start-2 min-[440px]:block self-center">
           <Tooltip text={t("video")} place="top">
-            <img
-              src="https://res.cloudinary.com/ericjuquel94/image/upload/v1638351914/portfolio/woody/Presidentielle_yqd9qb.png"
-              alt="UI Elections Us France 24"
-              width={400}
-              className="m-auto"
+            <button
+              type="button"
+              className="block m-auto p-0 border-0 bg-transparent cursor-pointer"
+              aria-label={`${t("slider")} : UI Elections Us France 24`}
               onClick={() => openModal(US_SLIDES)}
-              onKeyDown={(e) => e.key === "Enter" && openModal(US_SLIDES)}
-            />
+            >
+              <img
+                src="https://res.cloudinary.com/ericjuquel94/image/upload/v1638351914/portfolio/woody/Presidentielle_yqd9qb.png"
+                alt="UI Elections Us France 24"
+                width={400}
+                className="m-auto"
+              />
+            </button>
           </Tooltip>
         </div>
 
         <div className="order-6 lg:col-start-1 lg:row-start-3 min-[440px]:block self-center">
           <Tooltip text={t("video")} place="top">
             <div className="relative  bg-white/10 p-2 rounded-md w-4/5 m-auto">
-              <img
-                src="https://res.cloudinary.com/ericjuquel94/image/upload/v1638351902/portfolio/woody/licences-blur_s9hryc.png"
-                alt="Serveur de licences"
-                width={400}
-                className="m-auto"
+              <button
+                type="button"
+                className="block m-auto p-0 border-0 bg-transparent cursor-pointer"
+                aria-label={`${t("slider")} : Serveur de licences`}
                 onClick={() => openModal(LICENCE_SLIDES)}
-                onKeyDown={(e) =>
-                  e.key === "Enter" && openModal(LICENCE_SLIDES)
-                }
-              />
+              >
+                <img
+                  src="https://res.cloudinary.com/ericjuquel94/image/upload/v1638351902/portfolio/woody/licences-blur_s9hryc.png"
+                  alt="Serveur de licences"
+                  width={400}
+                  className="m-auto"
+                />
+              </button>
             </div>
           </Tooltip>
         </div>

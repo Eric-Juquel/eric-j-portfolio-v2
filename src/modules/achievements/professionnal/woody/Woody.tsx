@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ReactPlayer from "react-player";
 import { NavLink } from "react-router-dom";
+import WoodyVideoThumb from "@/assets/images/woody-video-thumb.webp";
 import type { Slide } from "@/shared/components/carousel/EmblaCarousel";
 import CarouselModal from "@/shared/components/modals/CarouselModal";
 import Tooltip from "@/shared/components/Tooltip";
@@ -39,7 +40,7 @@ export default function Woody() {
               <ReactPlayer
                 playing={false}
                 controls
-                light
+                light={WoodyVideoThumb}
                 volume={0.3}
                 width="25rem"
                 height="15rem"

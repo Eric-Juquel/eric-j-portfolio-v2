@@ -1,5 +1,5 @@
 import type { EmblaOptionsType } from "embla-carousel";
-import type { RefObject } from "react";
+import { useId, type RefObject } from "react";
 import type { Slide } from "../carousel/EmblaCarousel";
 import EmblaCarousel from "../carousel/EmblaCarousel";
 
@@ -18,9 +18,13 @@ export default function CarouselModal({
   title,
   overlay = false,
 }: CarouselModalProps) {
+  const titleId = useId();
+
   return (
     <dialog
       ref={dialogRef}
+      aria-labelledby={title ? titleId : undefined}
+      aria-label={title ? undefined : "Gallery"}
       onClick={(e) => {
         if (e.target === e.currentTarget) dialogRef?.current?.close();
       }}
@@ -29,7 +33,11 @@ export default function CarouselModal({
       rounded-md p-6 w-[95%] max-w-6xl
       backdrop:bg-black/50 backdrop:backdrop-blur-sm z-50 outline-none"
     >
-      {title && <h2 className="text-center mb-6">{title}</h2>}
+      {title && (
+        <h2 id={titleId} className="text-center mb-6">
+          {title}
+        </h2>
+      )}
 
       <div
         className={`relative ${overlay ? "bg-white/10 p-2 rounded-md" : ""}`}

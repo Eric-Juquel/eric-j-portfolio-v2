@@ -43,29 +43,26 @@ export default function Heading({ closeBurger }: HeadingProps) {
 
   return (
     <div className="w-[90%]  lg:h-90 flex flex-col items-center justify-between">
-      <NavLink className="w-full" to="/">
-        <button
-          type="button"
-          className=" flex h-50  lg:flex-col lg:h-80 p-4 justify-between rounded-md hover:bg-gray-700/60"
-          onClick={() => {
-            closeBurger?.();
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            });
-          }}
-        >
-          <Logo className="h-40 w-40" />
-          <div>
-            <h2 className="mb-1">Eric</h2>
-            <h3>{t("title")}</h3>
-          </div>
-        </button>
+      <NavLink
+        className="w-full flex h-50 lg:flex-col lg:h-80 p-4 justify-between rounded-md hover:bg-gray-700/60"
+        to="/"
+        onClick={() => {
+          closeBurger?.();
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        }}
+      >
+        <Logo className="h-40 w-40" />
+        <div>
+          <h2 className="mb-1">Eric</h2>
+          <h3>{t("title")}</h3>
+        </div>
       </NavLink>
       <div className="flex p-2 items-center justify-around w-full">
         <Tooltip text={t("cv")} place="top">
           <button
-            aria-describedby="tooltip-id"
             type="button"
             className=" cursor-pointer text-sm text-black bg-secondary hover:bg-secondary-hover px-4 py-2 min-w-16 rounded-sm uppercase transition-colors ease-in-out"
             onClick={openCVModalHandler}
@@ -75,7 +72,6 @@ export default function Heading({ closeBurger }: HeadingProps) {
         </Tooltip>
         <Tooltip text={t("lr")} place="top">
           <button
-            aria-describedby="tooltip-id"
             type="button"
             className="cursor-pointer text-sm text-black bg-secondary hover:bg-secondary-hover px-4 py-2 min-w-16 rounded-sm uppercase transition-colors ease-in-out"
             onClick={openLRModalHandler}

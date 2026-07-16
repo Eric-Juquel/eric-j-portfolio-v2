@@ -17,7 +17,9 @@
 
   "contactMe": "contact me",
   "name": "Name",
+  "emailLabel": "Email",
   "subject": "Subject",
+  "message": "Message",
   "submit": "submit",
   "sending": "sending...",
   "sent": "Message sent with success",

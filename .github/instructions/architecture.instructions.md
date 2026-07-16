@@ -16,7 +16,7 @@ The application is **frontend-only** (no backend). The only server-side code is 
 | Routing        | react-router-dom v7                          |
 | i18n           | i18next + react-i18next                      |
 | Forms          | react-hook-form + zod                        |
-| Carousel       | embla-carousel-react + embla-carousel-fade   |
+| Carousel       | embla-carousel-react                         |
 | Icons          | lucide-react + @fortawesome/fontawesome-free |
 | Notifications  | react-toastify                               |
 | Serverless API | Vercel functions + @sendgrid/mail            |
@@ -177,7 +177,7 @@ A `<dialog>`-based modal wrapping `EmblaCarousel`. Used for fullscreen image car
 
 | File                    | Role                                                                                 |
 | ----------------------- | ------------------------------------------------------------------------------------ |
-| `EmblaCarousel.tsx`     | Main carousel component (uses `embla-carousel-react` + `embla-carousel-fade` plugin) |
+| `EmblaCarousel.tsx`     | Main carousel component (uses `embla-carousel-react`, classic slide transition)      |
 | `EmblaArrows.tsx`       | Previous/Next arrow buttons (lucide-react icons)                                     |
 | `EmblaDots.tsx`         | Dot indicators                                                                       |
 | `useEmblaNavigation.ts` | Hook managing prev/next navigation state                                             |

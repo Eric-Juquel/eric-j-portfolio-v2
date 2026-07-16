@@ -25,7 +25,6 @@ export default defineConfig({
           "vendor-ui": [
             "embla-carousel-react",
             "embla-carousel",
-            "embla-carousel-fade",
             "react-toastify",
             "lucide-react",
           ],

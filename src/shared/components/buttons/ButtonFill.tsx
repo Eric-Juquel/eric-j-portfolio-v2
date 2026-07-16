@@ -24,7 +24,9 @@ export default function ButtonFill({
           type={type}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className={`relative w-45 h-15 cursor-pointer bg-transparent border border-secondary outline-none text-xl font-thin capitalize ${className ?? ""}`}
+          onFocus={() => setIsHovered(true)}
+          onBlur={() => setIsHovered(false)}
+          className={`relative w-45 h-15 cursor-pointer bg-transparent border border-secondary text-xl font-thin capitalize focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-paper ${className ?? ""}`}
           style={{
             color: isHovered ? "black" : "var(--color-secondary)",
             boxShadow: isHovered

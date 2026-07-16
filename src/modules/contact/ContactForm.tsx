@@ -48,8 +48,10 @@ export default function ContactForm() {
     }
   };
 
-  const ErrorMessage = ({ message }: { message?: string }) => (
-    <p className="text-warning text-sm mt-1 min-h-5">{message || "\u00A0"}</p>
+  const ErrorMessage = ({ id, message }: { id: string; message?: string }) => (
+    <p id={id} aria-live="polite" className="text-warning text-sm mt-1 min-h-5">
+      {message || "\u00A0"}
+    </p>
   );
 
   return (
@@ -58,46 +60,78 @@ export default function ContactForm() {
         {/* Name + Email */}
         <div className="grid md:grid-cols-2 gap-4">
           <div>
+            <label htmlFor="name" className="sr-only">
+              {t("name")}
+            </label>
             <input
               {...register("name")}
+              id="name"
+              required
+              aria-required="true"
+              aria-invalid={!!errors.name}
+              aria-describedby={errors.name ? "name-error" : undefined}
               placeholder={t("name")}
               className="w-full bg-paper border border-white/10 rounded px-4 py-3 text-light focus:outline-none focus:border-secondary"
             />
-            <ErrorMessage message={errors.name?.message} />
+            <ErrorMessage id="name-error" message={errors.name?.message} />
           </div>
 
           <div>
+            <label htmlFor="email" className="sr-only">
+              {t("emailLabel")}
+            </label>
             <input
               {...register("email")}
+              id="email"
               type="email"
-              placeholder={"Email"}
+              required
+              aria-required="true"
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? "email-error" : undefined}
+              placeholder={t("emailLabel")}
               className="w-full bg-paper border border-white/10 rounded px-4 py-3 text-light focus:outline-none focus:border-secondary"
             />
-            <ErrorMessage message={errors.email?.message} />
+            <ErrorMessage id="email-error" message={errors.email?.message} />
           </div>
         </div>
 
         {/* Subject */}
         <div>
+          <label htmlFor="subject" className="sr-only">
+            {t("subject")}
+          </label>
           <input
             {...register("subject")}
+            id="subject"
+            required
+            aria-required="true"
+            aria-invalid={!!errors.subject}
+            aria-describedby={errors.subject ? "subject-error" : undefined}
             maxLength={100}
             placeholder={t("subject")}
             className="w-full bg-paper border border-white/10 rounded px-4 py-3 text-light focus:outline-none focus:border-secondary"
           />
-          <ErrorMessage message={errors.subject?.message} />
+          <ErrorMessage id="subject-error" message={errors.subject?.message} />
         </div>
 
         {/* Message */}
         <div>
+          <label htmlFor="message" className="sr-only">
+            {t("message")}
+          </label>
           <textarea
             {...register("message")}
+            id="message"
+            required
+            aria-required="true"
+            aria-invalid={!!errors.message}
+            aria-describedby={errors.message ? "message-error" : undefined}
             rows={5}
             maxLength={500}
             placeholder={t("message")}
             className="w-full bg-paper border border-white/10 rounded px-4 py-3 text-light resize-none focus:outline-none focus:border-secondary"
           />
-          <ErrorMessage message={errors.message?.message} />
+          <ErrorMessage id="message-error" message={errors.message?.message} />
         </div>
 
         {/* Submit */}

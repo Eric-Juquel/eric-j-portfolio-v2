@@ -1,4 +1,4 @@
-import type { RefObject } from "react";
+import { useId, type RefObject } from "react";
 import { useNavigate } from "react-router-dom";
 
 export type ModalContent = {
@@ -14,16 +14,20 @@ export interface ModalProps {
 
 export default function Modal({ ref, modalContent }: ModalProps) {
   const navigate = useNavigate();
+  const titleId = useId();
 
   return (
     <dialog
       ref={ref}
+      aria-labelledby={titleId}
       onClick={(e) => {
         if (e.target === e.currentTarget) ref?.current?.close();
       }}
       className="fixed bg-paper top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  rounded-md p-6 w-[90%] max-w-md  backdrop:bg-black/40 backdrop:backdrop-blur-sm z-50"
     >
-      <h2 className="text-center">{modalContent.title}</h2>
+      <h2 id={titleId} className="text-center">
+        {modalContent.title}
+      </h2>
       <h6 className=" mb-4 text-center">{modalContent.description}</h6>
       <form method="dialog" className="flex w-full items-center justify-evenly">
         {modalContent.documentRef ? (

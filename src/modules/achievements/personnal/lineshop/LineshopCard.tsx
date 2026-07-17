@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import LineshopIntroMp4 from "@/assets/lineshop-intro.mp4";
 import LineshopIntroWebm from "@/assets/lineshop-intro.webm";
@@ -21,6 +22,14 @@ export default function LineshopCard({
 	hideVisitOnMobile = false,
 }: LineshopCardProps) {
 	const { t } = useTranslation();
+	const videoRef = useRef<HTMLVideoElement>(null);
+	const [isPlaying, setIsPlaying] = useState(false);
+
+	const handlePlayClick = () => {
+		const video = videoRef.current;
+		if (!video) return;
+		video.play().catch(() => {});
+	};
 
 	return (
 		<div className="max-w-6xl w-full mb-10">
@@ -34,19 +43,34 @@ export default function LineshopCard({
 			/>
 
 			{/* animated clip for small screens (the live iframe is too heavy on mobile) */}
-			<video
-				className="block lg:hidden w-full h-auto object-cover md:px-1"
-				poster={imageUrl}
-				autoPlay
-				muted
-				loop
-				playsInline
-				preload="metadata"
-				aria-label={title}
-			>
-				<source src={LineshopIntroWebm} type="video/webm" />
-				<source src={LineshopIntroMp4} type="video/mp4" />
-			</video>
+			<div className="relative block lg:hidden w-full">
+				<video
+					ref={videoRef}
+					className="w-full h-auto object-cover md:px-1"
+					poster={imageUrl}
+					muted
+					loop
+					playsInline
+					preload="metadata"
+					onPlay={() => setIsPlaying(true)}
+					aria-label={title}
+				>
+					<source src={LineshopIntroWebm} type="video/webm" />
+					<source src={LineshopIntroMp4} type="video/mp4" />
+				</video>
+				{!isPlaying && (
+					<button
+						type="button"
+						onClick={handlePlayClick}
+						className="absolute inset-0 flex items-center justify-center cursor-pointer"
+						aria-label={t("video")}
+					>
+						<span className="flex items-center justify-center w-16 h-16 rounded-full bg-black/50">
+							<span className="ml-1 border-y-12 border-y-transparent border-l-20 border-l-white" />
+						</span>
+					</button>
+				)}
+			</div>
 
 			<div className="flex flex-col items-start gap-2 mt-4">
 				<h5 className="text-2xl font-normal">{title}</h5>

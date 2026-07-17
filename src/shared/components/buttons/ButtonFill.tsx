@@ -1,4 +1,5 @@
-import { type ButtonHTMLAttributes, useState } from "react";
+import { type ButtonHTMLAttributes, useRef, useState } from "react";
+import { useAutoHoverOnMobile } from "@/shared/hooks/useAutoHoverOnMobile";
 
 interface ButtonFillProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
@@ -16,11 +17,15 @@ export default function ButtonFill({
   ...props
 }: ButtonFillProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const introActive = useAutoHoverOnMobile(buttonRef);
+  const active = isHovered || introActive;
 
   return (
     <div className="relative flex items-center justify-center w-50 h-40">
       <div className="relative w-45 h-15">
         <button
+          ref={buttonRef}
           type={type}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -28,8 +33,8 @@ export default function ButtonFill({
           onBlur={() => setIsHovered(false)}
           className={`relative w-45 h-15 cursor-pointer bg-transparent border border-secondary text-xl font-thin capitalize focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-paper ${className ?? ""}`}
           style={{
-            color: isHovered ? "black" : "var(--color-secondary)",
-            boxShadow: isHovered
+            color: active ? "black" : "var(--color-secondary)",
+            boxShadow: active
               ? "inset 0 0 0 2em var(--color-secondary)"
               : "none",
             transition:
@@ -45,7 +50,7 @@ export default function ButtonFill({
             className="absolute left-0 top-0 fill-none stroke-white"
             style={{
               strokeDasharray: "150 480",
-              strokeDashoffset: isHovered ? -480 : 150,
+              strokeDashoffset: active ? -480 : 150,
               transition: "stroke-dashoffset 1s ease-in-out",
             }}
           >

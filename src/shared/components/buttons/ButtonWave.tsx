@@ -1,14 +1,20 @@
+import { useRef } from "react";
 import { NavLink } from "react-router-dom";
+import { useAutoHoverOnMobile } from "@/shared/hooks/useAutoHoverOnMobile";
 
 export interface ButtonWaveProps {
   text: string;
 }
 
 export default function ButtonWave({ text }: ButtonWaveProps) {
+  const linkRef = useRef<HTMLAnchorElement>(null);
+  const introActive = useAutoHoverOnMobile(linkRef);
+
   return (
     <div className="flex justify-center items-center w-50 h-10">
       <div className="absolute w-45 h-15">
         <NavLink
+          ref={linkRef}
           to="/contact"
           className="group flex w-full text-center bg-transparent text-secondary text-xl capitalize"
         >
@@ -20,10 +26,12 @@ export default function ButtonWave({ text }: ButtonWaveProps) {
               fill="none"
               width="100%"
               height="99%"
-              className="fill-none stroke-secondary stroke-2 transition-all duration-500 ease-linear [stroke-dasharray:600,0]  group-hover:[stroke-dasharray:100,300]  group-hover:[stroke-dashoffset:120]  group-hover:[transition:all_1.35s_cubic-bezier(0.19,1,0.22,1)]"
+              className={`fill-none stroke-secondary stroke-2 transition-all duration-500 ease-linear [stroke-dasharray:600,0] group-hover:[stroke-dasharray:100,300] group-hover:[stroke-dashoffset:120] group-hover:[transition:all_1.35s_cubic-bezier(0.19,1,0.22,1)] ${introActive ? "[stroke-dasharray:100,300]! [stroke-dashoffset:120]! [transition:all_1.35s_cubic-bezier(0.19,1,0.22,1)]!" : ""}`}
             />
           </svg>
-          <span className="mt-4 mx-auto translate-y-0 transition-transform duration-300 group-active:translate-y-0.75">
+          <span
+            className={`mt-4 mx-auto translate-y-0 transition-transform duration-300 group-active:translate-y-0.75 ${introActive ? "translate-y-0.75!" : ""}`}
+          >
             {text}
           </span>
         </NavLink>

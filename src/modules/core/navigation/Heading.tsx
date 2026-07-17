@@ -44,7 +44,7 @@ export default function Heading({ closeBurger }: HeadingProps) {
   return (
     <div className="w-[90%]  lg:h-90 flex flex-col items-center justify-between">
       <NavLink
-        className="w-full flex h-50 lg:flex-col lg:h-80 p-4 justify-between rounded-md hover:bg-gray-700/60"
+        className="w-full flex h-50 lg:flex-col lg:h-80 p-4 justify-between rounded-md pointer-fine:hover:bg-gray-700/60"
         to="/"
         onClick={() => {
           closeBurger?.();

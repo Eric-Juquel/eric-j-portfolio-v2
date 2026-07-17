@@ -11,7 +11,7 @@ export default function SkillPragraph({
 }: SkillPragraphProps) {
   return (
     <div className={className}>
-      <p className="text-light body1 text-center lg:text-left">
+      <p className="text-light body1 text-left">
         {label}:{" "}
         {list.map((skill, i) => (
           <span key={skill}>

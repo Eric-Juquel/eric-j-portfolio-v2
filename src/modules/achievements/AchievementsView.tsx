@@ -9,8 +9,11 @@ function AchievementsView() {
   const { t } = useTranslation();
 
   return (
-    <div id="achievements" className="flex flex-col  w-full px-3  pt-20 gap-20">
-      <div className="h-33 w-fit">
+    <div
+      id="achievements"
+      className="flex flex-col w-full px-3 pt-10 lg:pt-20 gap-10 lg:gap-20"
+    >
+      <div className="h-auto lg:h-33 w-fit">
         <h4 className="text-3xl sm:text-4xl lg:text-6xl">{t("achievements")}</h4>
       </div>
 

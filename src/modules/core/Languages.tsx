@@ -11,13 +11,13 @@ export default function Languages() {
 
   const frButtonClass = `rounded-l-sm ${languageButtonCommon}  ${
     isFrench
-      ? "text-black bg-secondary hover:bg-secondary-hover"
+      ? "text-black bg-secondary pointer-fine:hover:bg-secondary-hover"
       : "text-secondary border border-secondary/50"
   }`;
 
   const enButtonClass = `rounded-r-sm ${languageButtonCommon}  ${
     isEnglish
-      ? "text-black bg-secondary hover:bg-secondary-hover"
+      ? "text-black bg-secondary pointer-fine:hover:bg-secondary-hover"
       : "text-secondary border border-secondary/50"
   }`;
 

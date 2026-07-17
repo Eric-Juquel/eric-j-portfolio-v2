@@ -7,7 +7,7 @@ import SkillsView from "../skills/SkillsView";
 export default function HomeView() {
   const { t } = useTranslation();
   return (
-    <div id="home" className="flex flex-col items-center w-full gap-10">
+    <div id="home" className="flex flex-col items-center w-full gap-4 lg:gap-10">
       <div className="flex flex-col h-screen justify-center w-full">
         <div className="flex flex-col align-center w-full max-w-100 sm:max-w-none sm:flex-row md:w-200">
           <div className="grid h-32 sm:h-40 md:h-50 w-1/3 grid-cols-[repeat(5,1.75rem)] grid-rows-[repeat(5,1.75rem)] sm:grid-cols-[repeat(5,2.25rem)] sm:grid-rows-[repeat(5,2.25rem)] md:grid-cols-[repeat(5,3rem)] md:grid-rows-[repeat(5,3rem)] text-3xl sm:text-4xl md:text-5xl font-capriola">

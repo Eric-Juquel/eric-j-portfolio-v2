@@ -11,7 +11,9 @@
     background-color 0.1s;
 }
 
-.nav-item:hover::before {
-  transform: scaleY(1);
-  width: 100%;
+@media (hover: hover) {
+  .nav-item:hover::before {
+    transform: scaleY(1);
+    width: 100%;
+  }
 }

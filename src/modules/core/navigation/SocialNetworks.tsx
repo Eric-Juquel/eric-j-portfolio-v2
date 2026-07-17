@@ -10,7 +10,7 @@ export default function SocialNetworks() {
         aria-label="LinkedIn"
       >
         <i
-          className="fab fa-linkedin text-4xl hover:text-secondary"
+          className="fab fa-linkedin text-4xl pointer-fine:hover:text-secondary"
           aria-hidden="true"
         ></i>
       </NavLink>
@@ -21,7 +21,7 @@ export default function SocialNetworks() {
         aria-label="GitHub"
       >
         <i
-          className="fab fa-github text-4xl hover:text-secondary"
+          className="fab fa-github text-4xl pointer-fine:hover:text-secondary"
           aria-hidden="true"
         ></i>
       </NavLink>

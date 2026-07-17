@@ -8,10 +8,10 @@ export default function ChipBox() {
   return (
     <div className="card-paper">
       <div className="w-fit">
-        <h4 className="text-4xl ">{t("libraries")}</h4>
+        <h4>{t("libraries")}</h4>
       </div>
 
-      <div className="flex justify-between w-full px-8 ">
+      <div className="flex flex-wrap justify-between gap-3 w-full px-3 sm:px-8">
         {libraries1.map((library) => (
           <Chip
             key={library.label}
@@ -20,7 +20,7 @@ export default function ChipBox() {
           />
         ))}
       </div>
-      <div className="flex justify-around w-full ">
+      <div className="flex flex-wrap justify-around gap-3 w-full">
         {libraries2.map((library) => (
           <Chip
             key={library.label}

@@ -9,13 +9,13 @@ export default function SkillsView() {
   return (
     <div id="skills" className="flex flex-col w-full px-3 pt-20">
       <div className="h-33 w-fit">
-        <h4 className="text-6xl">{t("skills")}</h4>
+        <h4 className="text-3xl sm:text-4xl lg:text-6xl">{t("skills")}</h4>
       </div>
       <div className="grid grid-cols-1 gap-6 mb-10 lg:grid-cols-2">
         <SkillParagraph
           label={t("skills-1")}
           list={list_1}
-          className="order-2 lg:col-start-1 lg:row-start-1 min-[440px]:block self-center"
+          className="order-2 lg:col-start-1 lg:row-start-1 self-center"
         />
 
         <SkillParagraph

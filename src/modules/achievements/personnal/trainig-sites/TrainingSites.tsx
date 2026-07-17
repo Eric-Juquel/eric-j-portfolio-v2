@@ -33,7 +33,7 @@ export default function TrainingSites() {
               <img
                 src={site.image}
                 alt={site.title}
-                className="w-full h-auto object-cover rounded-md hover:scale-105 transition-transform duration-300"
+                className="w-full h-auto object-cover rounded-md pointer-fine:hover:scale-105 transition-transform duration-300"
               />
             </button>
             <h3 className="text-xl font-semibold mt-4">{site.title}</h3>

@@ -6,7 +6,7 @@ export default function VisitCard() {
   const { t } = useTranslation();
 
   return (
-    <div className="card-paper font-montserrat w-120 max-w-full  mx-auto items-start">
+    <div className="card-paper font-montserrat w-full max-w-120 mx-auto items-start">
       <div className="flex flex-col">
         <h2>Eric Juquel</h2>
         <h5 className="body1 font-thin text-medium"> {t("subtitle")}</h5>

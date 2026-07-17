@@ -7,6 +7,7 @@ interface LineshopCardProps {
   title: string;
   subtitle: string;
   visitUrl: string;
+  hideVisitOnMobile?: boolean;
 }
 
 export default function LineshopCard({
@@ -15,6 +16,7 @@ export default function LineshopCard({
   title,
   subtitle,
   visitUrl,
+  hideVisitOnMobile = false,
 }: LineshopCardProps) {
   const { t } = useTranslation();
 
@@ -24,7 +26,7 @@ export default function LineshopCard({
       <iframe
         src={iframeUrl}
         title={title}
-        className="hidden lg:block w-full xl:h-150 lg:h-100 md:h-80 sm:h-40 border-none"
+        className="hidden lg:block w-full xl:h-150 lg:h-100 border-none"
         sandbox="allow-scripts allow-same-origin"
         loading="lazy"
       />
@@ -42,7 +44,7 @@ export default function LineshopCard({
         <p className="text-gray-400">{subtitle}</p>
       </div>
 
-      <div className="mt-4">
+      <div className={hideVisitOnMobile ? "hidden lg:block mt-4" : "mt-4"}>
         <Tooltip
           text={`${t("linkTo")} ${visitUrl}`}
           place="top"

@@ -8,7 +8,7 @@ export default function ProgressBox() {
   return (
     <div className="card-paper">
       <div className="w-fit">
-        <h4 className="text-4xl ">{t("languageFramework")}</h4>
+        <h4>{t("languageFramework")}</h4>
       </div>
 
       <div className="space-y-6 w-full">

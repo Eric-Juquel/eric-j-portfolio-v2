@@ -11,12 +11,14 @@ function AchievementsView() {
   return (
     <div id="achievements" className="flex flex-col  w-full px-3  pt-20 gap-20">
       <div className="h-33 w-fit">
-        <h4 className="text-6xl">{t("achievements")}</h4>
+        <h4 className="text-3xl sm:text-4xl lg:text-6xl">{t("achievements")}</h4>
       </div>
 
       <section className=" card-paper relative">
         <div className="self-end relative -top-9 mr-10 bg-[linear-gradient(to_bottom,rgba(28,36,48,0)_0%,rgba(28,36,48,0)_49%,rgb(28,36,48)_58%)]     ">
-          <h4 className=" text-secondary text-3xl">{t("professionals")}</h4>
+          <h4 className="text-secondary text-xl sm:text-2xl lg:text-3xl">
+            {t("professionals")}
+          </h4>
         </div>
 
         <Frog />
@@ -25,7 +27,9 @@ function AchievementsView() {
       </section>
       <section className=" card-paper relative">
         <div className="self-end relative -top-9 mr-10 bg-[linear-gradient(to_bottom,rgba(28,36,48,0)_0%,rgba(28,36,48,0)_49%,rgb(28,36,48)_58%)]     ">
-          <h4 className=" text-secondary text-3xl">{t("training")}</h4>
+          <h4 className="text-secondary text-xl sm:text-2xl lg:text-3xl">
+            {t("training")}
+          </h4>
         </div>
 
         <LineshopCard
@@ -34,6 +38,7 @@ function AchievementsView() {
           title="LineShop Gaming - MERN stack"
           subtitle={t("lineshopDesc")}
           visitUrl="https://lineshopgaming.vercel.app/"
+          hideVisitOnMobile
         />
         <Divider />
         <TrainingSites />

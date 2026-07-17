@@ -34,23 +34,31 @@ export default function Woody() {
         </NavLink>
       </Tooltip>
       <div className="grid grid-cols-1 gap-6 mb-10 lg:grid-cols-2">
-        <div className="order-1 lg:col-start-1 lg:row-start-1 min-[440px]:block   ">
+        <div className="order-1 lg:col-start-1 lg:row-start-1">
           <Tooltip text={t("video")} place="top">
-            <div className="w-100 h-60 m-auto flex items-center justify-center">
+            <div
+              className="relative w-full max-w-100 m-auto"
+              style={{ paddingTop: "56.25%" }}
+            >
               <ReactPlayer
                 playing={false}
                 controls
                 light={WoodyVideoThumb}
                 volume={0.3}
-                width="25rem"
-                height="15rem"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                }}
                 src="https://vimeo.com/481159581"
               />
             </div>
           </Tooltip>
         </div>
 
-        <div className="order-2 lg:col-start-2 lg:row-start-1 min-[440px]:block self-center">
+        <div className="order-2 lg:col-start-2 lg:row-start-1 self-center">
           <p className="body1 ">
             {t("coverage")}
             <span className="body1 text-primary">
@@ -64,14 +72,14 @@ export default function Woody() {
           </p>
         </div>
 
-        <div className="order-3 lg:col-start-1 lg:row-start-2 min-[440px]:block self-center">
+        <div className="order-3 lg:col-start-1 lg:row-start-2 self-center">
           <p className="body1 ">
             <span className="text-primary">{t("interface")}</span>
             {t("include")}
           </p>
         </div>
 
-        <div className="order-4 lg:col-start-2 lg:row-start-2 min-[440px]:block self-center">
+        <div className="order-4 lg:col-start-2 lg:row-start-2 self-center">
           <Tooltip text={t("video")} place="top">
             <button
               type="button"
@@ -82,14 +90,13 @@ export default function Woody() {
               <img
                 src="https://res.cloudinary.com/ericjuquel94/image/upload/v1638351914/portfolio/woody/Presidentielle_yqd9qb.png"
                 alt="UI Elections Us France 24"
-                width={400}
-                className="m-auto"
+                className="m-auto w-full max-w-100"
               />
             </button>
           </Tooltip>
         </div>
 
-        <div className="order-6 lg:col-start-1 lg:row-start-3 min-[440px]:block self-center">
+        <div className="order-6 lg:col-start-1 lg:row-start-3 self-center">
           <Tooltip text={t("video")} place="top">
             <div className="relative  bg-white/10 p-2 rounded-md w-4/5 m-auto">
               <button
@@ -101,15 +108,14 @@ export default function Woody() {
                 <img
                   src="https://res.cloudinary.com/ericjuquel94/image/upload/v1638351902/portfolio/woody/licences-blur_s9hryc.png"
                   alt="Serveur de licences"
-                  width={400}
-                  className="m-auto"
+                  className="m-auto w-full max-w-100"
                 />
               </button>
             </div>
           </Tooltip>
         </div>
 
-        <div className="order-5 lg:col-start-2 lg:row-start-3 min-[440px]:block self-center">
+        <div className="order-5 lg:col-start-2 lg:row-start-3 self-center">
           <p className="body1 ">
             {t("licence")}
             <span className="text-primary">{t("serveur")}</span>

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import LineshopIntroMp4 from "@/assets/lineshop-intro.mp4";
 import LineshopIntroWebm from "@/assets/lineshop-intro.webm";
@@ -22,22 +22,11 @@ export default function LineshopCard({
 	hideVisitOnMobile = false,
 }: LineshopCardProps) {
 	const { t } = useTranslation();
-	const videoRef = useRef<HTMLVideoElement>(null);
-
-	useEffect(() => {
-		const video = videoRef.current;
-		if (!video) return;
-
-		// iOS Safari checks the `muted` HTML attribute for autoplay eligibility,
-		// but React only ever sets it as a JS property (facebook/react#10389).
-		video.setAttribute("muted", "");
-		video.muted = true;
-		video.play().catch(() => {});
-	}, []);
+	const [hasStarted, setHasStarted] = useState(false);
 
 	return (
 		<div className="max-w-6xl w-full mb-10">
-			{/* iframe pour grand écran */}
+			{/* iframe for large screens */}
 			<iframe
 				src={iframeUrl}
 				title={title}
@@ -46,21 +35,39 @@ export default function LineshopCard({
 				loading="lazy"
 			/>
 
-			{/* clip animé pour petit écran (l'iframe live est trop lourde sur mobile) */}
-			<video
-				ref={videoRef}
-				className="block lg:hidden w-full h-auto object-cover md:px-1"
-				poster={imageUrl}
-				autoPlay
-				muted
-				loop
-				playsInline
-				preload="metadata"
-				aria-label={title}
-			>
-				<source src={LineshopIntroWebm} type="video/webm" />
-				<source src={LineshopIntroMp4} type="video/mp4" />
-			</video>
+			{/* animated clip for small screens (the live iframe is too heavy on mobile) */}
+			{hasStarted ? (
+				<video
+					className="block lg:hidden w-full h-auto object-cover md:px-1"
+					autoPlay
+					muted
+					loop
+					playsInline
+					aria-label={title}
+				>
+					<source src={LineshopIntroWebm} type="video/webm" />
+					<source src={LineshopIntroMp4} type="video/mp4" />
+				</video>
+			) : (
+				<button
+					type="button"
+					onClick={() => setHasStarted(true)}
+					className="relative block lg:hidden w-full cursor-pointer"
+					aria-label={t("video")}
+				>
+					<img
+						src={imageUrl}
+						alt={title}
+						className="w-full h-auto object-cover md:px-1"
+						loading="lazy"
+					/>
+					<span className="absolute inset-0 flex items-center justify-center">
+						<span className="flex items-center justify-center w-16 h-16 rounded-full bg-black/50">
+							<span className="ml-1 border-y-12 border-y-transparent border-l-20 border-l-white" />
+						</span>
+					</span>
+				</button>
+			)}
 
 			<div className="flex flex-col items-start gap-2 mt-4">
 				<h5 className="text-2xl font-normal">{title}</h5>

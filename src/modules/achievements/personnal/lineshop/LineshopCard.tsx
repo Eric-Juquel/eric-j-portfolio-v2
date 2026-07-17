@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import LineshopIntroMp4 from "@/assets/lineshop-intro.mp4";
 import LineshopIntroWebm from "@/assets/lineshop-intro.webm";
@@ -21,6 +22,18 @@ export default function LineshopCard({
 	hideVisitOnMobile = false,
 }: LineshopCardProps) {
 	const { t } = useTranslation();
+	const videoRef = useRef<HTMLVideoElement>(null);
+
+	useEffect(() => {
+		const video = videoRef.current;
+		if (!video) return;
+
+		// iOS Safari checks the `muted` HTML attribute for autoplay eligibility,
+		// but React only ever sets it as a JS property (facebook/react#10389).
+		video.setAttribute("muted", "");
+		video.muted = true;
+		video.play().catch(() => {});
+	}, []);
 
 	return (
 		<div className="max-w-6xl w-full mb-10">
@@ -35,6 +48,7 @@ export default function LineshopCard({
 
 			{/* clip animé pour petit écran (l'iframe live est trop lourde sur mobile) */}
 			<video
+				ref={videoRef}
 				className="block lg:hidden w-full h-auto object-cover md:px-1"
 				poster={imageUrl}
 				autoPlay

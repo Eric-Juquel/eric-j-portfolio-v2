@@ -11,7 +11,7 @@
 	"home": "home",
 	"about": "about",
 	"skills": "skills",
-	"achievements": " my work",
+	"achievements": "achievements",
 	"career": "career",
 	"contact": "contact",
 
@@ -24,19 +24,19 @@
 	"sending": "sending...",
 	"sent": "Message sent with success",
 	"errorSent": "Error! Message not sent",
-	"bot": " You're not fooling us, bot",
+	"bot": "Bot detected!",
 	"close": "Close",
 
 	"skills-1": "My 'Web & mobile web developer' training provided me with the fundamental bases for creating responsive websites",
-	"skills-2": "I choose to focus on JavaScipt by developing my skills in this workflow",
+	"skills-2": "I choose to focus on JavaScript by developing my skills in this workflow",
 	"skills-3": "My professional experience in a company allowed me to carry out the Front-End and Back-end parts of web applications in ReactJs/Angular/NodeJs and to master the essential tools for teamwork",
 	"skills-4": "I regularly practice a technological watch in order to optimize my current skills and acquire new ones",
 	"languageFramework": "Full-stack",
-	"library": "librarys",
+	"library": "libraries",
 	"test": "Automated tests",
 
 	"professionals": "professionals",
-	"training": "personnals",
+	"training": "personal",
 	"linkTo": "Visit: ",
 	"complete": "Full description on Linkedin",
 
@@ -52,13 +52,13 @@
 	"insideMyRacePost": ", an experience that blends data, AI and storytelling to help fans understand the behind-the-scenes of every stage. I contributed as a React front-end developer, working on the 3D-map race replay module.",
 
 	"coverage": "For the coverage of the",
-	"elections": " american elections of France 24",
+	"elections": " American elections of France 24",
 	"achieve": ", I achieved the front part of the user interface allowing to consult the results, to moderate them and to make them available to the graphical tools.",
 	"interface": "The interface",
 	"include": " also included the edition of information banners as well as the publication of antenna infographics to the social networks of the France Médias Monde group.",
 
 	"video": "Play video",
-	"slider": "Open Slider",
+	"slider": "Open slider",
 
 	"licence": "My mission was to completely redesign the administration interface of the company's ",
 	"serveur": "license server ",
@@ -74,10 +74,10 @@
 
 	"lineshopDesc": "Full stack demo e-commerce site realized from scratch, combining MongoDB Express React and NodeJs",
 	"lineshopSandboxNote": "(sandbox preview - forms disabled)",
-	"visit": "Visit web site",
+	"visit": "Visit website",
 
 	"smTitle": "Île Sainte Marie",
-	"smSub": "Web site project around Sainte Marie Island in Madagascar, fully responsive",
+	"smSub": "Website project around Sainte Marie Island in Madagascar, fully responsive",
 
 	"ltdTitle": "LTD Car Service",
 	"ltdSub": "Redesign of the website of a luxury vehicle provider with driver in Paris",

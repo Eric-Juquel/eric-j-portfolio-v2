@@ -1,16 +1,16 @@
-import sgMail, { type MailDataRequired } from "@sendgrid/mail";
+import { BrevoClient } from "@getbrevo/brevo";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { z } from "zod";
 
-const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
+const BREVO_API_KEY = process.env.BREVO_API_KEY;
 const CONTACT_SENDER = process.env.CONTACT_SENDER!;
 const CONTACT_RECEIVER = process.env.CONTACT_RECEIVER!;
 
-if (!SENDGRID_API_KEY) throw new Error("SENDGRID_API_KEY is missing");
+if (!BREVO_API_KEY) throw new Error("BREVO_API_KEY is missing");
 if (!CONTACT_SENDER) throw new Error("CONTACT_SENDER is missing");
 if (!CONTACT_RECEIVER) throw new Error("CONTACT_RECEIVER is missing");
 
-sgMail.setApiKey(SENDGRID_API_KEY);
+const brevo = new BrevoClient({ apiKey: BREVO_API_KEY });
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -34,25 +34,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const body = contactSchema.parse(req.body);
 
-    const mail: MailDataRequired = {
-      to: CONTACT_RECEIVER,
-      from: CONTACT_SENDER,
+    await brevo.transactionalEmails.sendTransacEmail({
+      to: [{ email: CONTACT_RECEIVER }],
+      sender: { email: CONTACT_SENDER },
+      replyTo: { email: body.email, name: body.name },
       subject: `[Contact] ${body.subject}`,
-      text: `From: ${body.name} <${body.email}>\n\n${body.message}`,
+      textContent: `From: ${body.name} <${body.email}>\n\n${body.message}`,
       headers: {
-        "X-Priority": "3",
-        "X-Mailer": "Vercel SendGrid Function",
+        "X-Mailer": "Vercel Brevo Function",
       },
-    };
-
-    await sgMail.send(mail);
+    });
     return res.status(200).json({ status: "success" });
   } catch (err) {
     if (err instanceof z.ZodError) {
       return res.status(400).json({ error: err.issues });
     }
 
-    console.error("SendGrid error:", err);
+    console.error("Brevo error:", err);
     return res.status(500).json({ status: "error" });
   }
 }

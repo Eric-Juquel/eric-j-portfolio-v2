@@ -19,7 +19,7 @@ Personal portfolio showcasing Eric Juquel's professional experience, skills, and
 | Carousel     | embla-carousel-react                   |
 | Linter       | Biome 2.x                              |
 | Tests        | Vitest + @testing-library/react        |
-| API          | Vercel serverless functions + SendGrid |
+| API          | Vercel serverless functions + Brevo    |
 
 ---
 
@@ -63,16 +63,18 @@ Open [http://localhost:3000](http://localhost:3000) in your browser (Vercel CLI 
 
 ## Environment Variables
 
-The contact form requires a Vercel serverless function backed by SendGrid.
+The contact form requires a Vercel serverless function backed by Brevo.
 
 Create a `.env.local` file at the root (this file is git-ignored — **never commit real values**):
 
 ```env
 # ⚠️ Never commit this file with real values
-SENDGRID_API_KEY=your_sendgrid_api_key_here
-CONTACT_SENDER=noreply@your-domain.com
+BREVO_API_KEY=your_brevo_api_key_here
+CONTACT_SENDER=your_verified_sender@example.com
 CONTACT_RECEIVER=you@your-email.com
 ```
+
+> **Note:** `CONTACT_SENDER` must be a **verified sender** in Brevo (Settings → Senders & IP → Verify a sender). Brevo accepts free-provider addresses (Gmail, Yahoo, …) via single sender verification — no owned domain required.
 
 For production, set these variables in the **Vercel Dashboard → Project Settings → Environment Variables**.
 
@@ -116,7 +118,7 @@ src/
 └── index.css           # Tailwind + design tokens + custom classes
 
 api/
-└── contact.ts          # Vercel serverless function (SendGrid email)
+└── contact.ts          # Vercel serverless function (Brevo email)
 ```
 
 ---

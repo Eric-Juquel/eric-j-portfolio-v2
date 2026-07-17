@@ -10,7 +10,7 @@
   }
 
   h1 {
-    @apply text-7xl font-bold bg-linear-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent;
+    @apply text-4xl sm:text-5xl lg:text-7xl font-bold bg-linear-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent;
   }
   h2 {
     @apply text-[2.125rem] text-light -tracking-tighter;
@@ -19,7 +19,7 @@
     @apply text-2xl font-light text-medium;
   }
   h4 {
-    @apply font-montserrat text-4xl capitalize bg-linear-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent font-light tracking-[0.00735rem];
+    @apply font-montserrat text-2xl sm:text-3xl lg:text-4xl capitalize bg-linear-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent font-light tracking-[0.00735rem];
   }
   h5 {
     @apply text-2xl font-normal;
@@ -88,6 +88,13 @@
   /* Card */
   .card-paper {
     @apply rounded border border-gray-600 bg-paper p-4 flex flex-col items-center gap-4;
+  }
+
+  /* react-player's light-mode preview ignores the `style` prop and sizes
+     itself by content (the play-icon); it must be sized via this class,
+     the documented override hook: https://github.com/CookPete/react-player */
+  .react-player__preview {
+    @apply absolute! inset-0! w-full! h-full!;
   }
 }
 

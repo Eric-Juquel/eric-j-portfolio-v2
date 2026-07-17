@@ -8,15 +8,15 @@ export default function ContactView() {
   return (
     <div id="contact" className="flex flex-col w-full px-3 pt-20">
       <div className="h-33 w-fit flex">
-        <h4 className="text-6xl">{t("contactMe")}</h4>
+        <h4 className="text-3xl sm:text-4xl lg:text-6xl">{t("contactMe")}</h4>
         <span className="pl-3 text-gray-400">**</span>
       </div>
 
-      <div className="flex flex-wrap justify-between ">
-        <div className="w-2/3 min-w-200 mb-10">
+      <div className="flex flex-col gap-6 xl:grid xl:grid-cols-3">
+        <div className="min-w-0 xl:col-span-2">
           <ContactForm />
         </div>
-        <div className="w-1/3 min-w-100">
+        <div className="min-w-0 xl:col-span-1">
           <VisitCard />
         </div>
       </div>

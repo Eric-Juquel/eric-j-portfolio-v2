@@ -64,7 +64,7 @@ export default function Heading({ closeBurger }: HeadingProps) {
         <Tooltip text={t("cv")} place="top">
           <button
             type="button"
-            className=" cursor-pointer text-sm text-black bg-secondary hover:bg-secondary-hover px-4 py-2 min-w-16 rounded-sm uppercase transition-colors ease-in-out"
+            className="button-regular"
             onClick={openCVModalHandler}
           >
             CV
@@ -73,7 +73,7 @@ export default function Heading({ closeBurger }: HeadingProps) {
         <Tooltip text={t("lr")} place="top">
           <button
             type="button"
-            className="cursor-pointer text-sm text-black bg-secondary hover:bg-secondary-hover px-4 py-2 min-w-16 rounded-sm uppercase transition-colors ease-in-out"
+            className="button-regular"
             onClick={openLRModalHandler}
           >
             LR

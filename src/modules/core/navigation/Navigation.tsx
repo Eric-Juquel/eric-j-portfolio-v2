@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { NavLink, useLocation } from "react-router-dom";
 import { scrollToTopHandler } from "@/shared/utils/scroll.utils";
 import { APP_ROUTES } from "../routes";
@@ -31,11 +32,12 @@ export default function Navigation({ closeBurger }: NavigationProps) {
                 data-testid={`navigation-link-to-${item.label}`}
                 to={item.href}
                 onClick={navigationHandler}
-                className=" relative flex justify-center  text-xl lg:text-[1rem] text-disabled py-4 px-18 z-10 items-center transition-colors ease-in-out hover:text-medium"
-                style={{
-                  color: isActive ? "rgba(255, 255, 255, 0.9)" : "",
-                  backgroundColor: isActive ? "rgba(0,0,0, 0.3)" : "",
-                }}
+                className={clsx(
+                  "relative flex justify-center items-center z-10",
+                  "text-xl lg:text-[1rem] text-disabled py-4 px-6 sm:px-10 lg:px-18",
+                  "transition-colors ease-in-out pointer-fine:hover:text-medium",
+                  isActive && "text-light bg-black/30",
+                )}
               >
                 <span className="capitalize">{t(item.label)}</span>
               </NavLink>

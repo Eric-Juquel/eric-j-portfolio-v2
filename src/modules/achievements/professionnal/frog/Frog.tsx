@@ -25,23 +25,22 @@ function Frog() {
       <div className="grid grid-cols-1  mb-10 lg:grid-cols-2 gap-20">
         <div className="order-1 lg:col-start-1 lg:row-start-1 self-center">
           <Tooltip text={t("video")} place="top">
-            <div
-              className="relative w-full max-w-100 m-auto"
-              style={{ paddingTop: "56.25%" }}
-            >
-              <ReactPlayer
-                playing={false}
-                controls
-                volume={0.3}
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                }}
-                src={InsideMyRaceVideo}
-              />
+            <div className="w-full max-w-100 lg:max-w-150 m-auto">
+              <div className="relative" style={{ paddingTop: "42.86%" }}>
+                <ReactPlayer
+                  playing={false}
+                  controls
+                  volume={0.3}
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                  }}
+                  src={InsideMyRaceVideo}
+                />
+              </div>
             </div>
           </Tooltip>
         </div>

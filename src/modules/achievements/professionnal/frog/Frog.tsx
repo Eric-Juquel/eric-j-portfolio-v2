@@ -29,10 +29,10 @@ function Frog() {
 						<div className="w-full max-w-100 lg:max-w-150 m-auto">
 							<div className="relative" style={{ paddingTop: "42.86%" }}>
 								<ReactPlayer
-									playing={false}
+									playing
 									controls
 									volume={0.3}
-									poster={InsideMyRacePoster}
+									light={InsideMyRacePoster}
 									preload="metadata"
 									playsInline
 									style={{
